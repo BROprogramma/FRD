@@ -15,7 +15,7 @@
    <body>
       <p>Conceptual model/Formatieweerstand onderzoek (FRD) conceptueel/20200401</p>
       <p>Imvertor: 1.61.2</p>
-      <p>Model release: Conceptualmodel-FormatieweerstandonderzoekFRDconceptueel-0.1-1-20200401-20200826-162807</p>
+      <p>Model release: Conceptualmodel-FormatieweerstandonderzoekFRDconceptueel-0.1-1-20200401-20200828-095438</p>
       <hr>
       <section>
          <h1>Artikel 1 Definitie van registratieobject, entiteiten en attributen</h1>
@@ -72,7 +72,7 @@
             <h2>Entiteiten en attributen</h2>
             <section id=""><a class="anchor" id="graph_EAID_F03C2FC8_5705_46dc_927D_01B7EC61C2F2"></a><a class="anchor" id="global_class_Model_Formatieweerstandonderzoek"></a><section id="global_class_Model_Formatieweerstandonderzoek">
                   <h3>   Formatieweerstandonderzoek</h3>
-                  <div class="imageinfo "><img src="Images/EAID_EFFA57A1_5749_4b23_BCF0_B36249C4E731.png" usemap="#imagemap-EAID_EFFA57A1_5749_4b23_BCF0_B36249C4E731" alt="Diagram "><map name="imagemap-EAID_EFFA57A1_5749_4b23_BCF0_B36249C4E731"><area shape="rect" alt="Elektrodepaar" coords="574,1186,792,1272" href="#graph_EAID_F78E7F84_132E_4390_A72A_D32759DEBED4"><area shape="rect" alt="Elektromagnetische meting meetrecord" coords="72,1216,310,1357" href="#graph_EAID_17DB4860_7353_467e_89CD_5018D22D8A43"><area shape="rect" alt="GMW-elektrodeverwijzing" coords="574,1324,792,1448" href="#graph_EAID_EFFFB8A0_3810_43f9_83F1_FC48EFD1FE4E"><area shape="rect" alt="Bepaling formatieweerstand" coords="377,387,589,474" href="#graph_EAID_D3B48B39_96CC_4f01_91F1_BDF0B725CD8A"><area shape="rect" alt="Registratiegeschiedenis" coords="35,144,271,363" href="#graph_EAID_0451B041_6862_420f_9E12_9829516BAF81"><area shape="rect" alt="Formatieweerstandonderzoek" coords="377,144,597,328" href="#graph_EAID_F03C2FC8_5705_46dc_927D_01B7EC61C2F2"><area shape="rect" alt="Registratieobject" coords="405,46,565,86" href="#graph_EAID_5706F7F6_075B_46d6_A47D_7DCF1EEB21B7"></map><p><b></b></p>
+                  <div class="imageinfo "><img src="Images/EAID_EFFA57A1_5749_4b23_BCF0_B36249C4E731.png" usemap="#imagemap-EAID_EFFA57A1_5749_4b23_BCF0_B36249C4E731" alt="Diagram "><map name="imagemap-EAID_EFFA57A1_5749_4b23_BCF0_B36249C4E731"><area shape="rect" alt="Bepaling formatieweerstand" coords="377,387,589,474" href="#graph_EAID_D3B48B39_96CC_4f01_91F1_BDF0B725CD8A"><area shape="rect" alt="Registratiegeschiedenis" coords="35,144,271,363" href="#graph_EAID_0451B041_6862_420f_9E12_9829516BAF81"><area shape="rect" alt="Formatieweerstandonderzoek" coords="377,144,597,328" href="#graph_EAID_F03C2FC8_5705_46dc_927D_01B7EC61C2F2"><area shape="rect" alt="Registratieobject" coords="405,46,565,86" href="#graph_EAID_5706F7F6_075B_46d6_A47D_7DCF1EEB21B7"></map><p><b></b></p>
                   </div>
                   <table style="width: 100%;">
                      <colgroup style="width: 30%;"></colgroup>
@@ -2486,7 +2486,8 @@
                            <th>Definitie</th>
                            <td>
                               
-                              <p>TODO</p>
+                              <p>De gegevens die nodig zijn voor de unieke identificatie van een specifieke elektrode
+                                 van een geo-ohmkabel aan een buis in een grondwatermonitoringput.</p>
                               </td>
                         </tr>
                      </tbody>
@@ -2711,7 +2712,7 @@
                            <th>Definitie</th>
                            <td>
                               
-                              <p>TODO</p>
+                              <p>De twee elektrodes waaruit een elektrodepaar is samengesteld.</p>
                               </td>
                         </tr>
                      </tbody>
@@ -2730,7 +2731,7 @@
                               <th>Definitie</th>
                               <td>
                                  
-                                 <p>TODO</p>
+                                 <p>De eerste elektrode van het elektrodepaar. </p>
                                  </td>
                            </tr>
                            <tr>
@@ -2748,6 +2749,13 @@
                            <tr>
                               <th>&nbsp;&nbsp;Naam</th>
                               <td>GMW-elektrodeverwijzing</td>
+                           </tr>
+                           <tr>
+                              <th>Regels</th>
+                              <td>
+                                 
+                                 <p>De waarde van het attribuut mag niet gelijk zijn aan <em>elektrode2</em>.</p>
+                                 </td>
                            </tr>
                         </tbody>
                      </table>
@@ -2766,7 +2774,7 @@
                               <th>Definitie</th>
                               <td>
                                  
-                                 <p>TODO</p>
+                                 <p>De tweede elektrode van het elektrodepaar. </p>
                                  </td>
                            </tr>
                            <tr>
@@ -2784,6 +2792,13 @@
                            <tr>
                               <th>&nbsp;&nbsp;Naam</th>
                               <td>GMW-elektrodeverwijzing</td>
+                           </tr>
+                           <tr>
+                              <th>Regels</th>
+                              <td>
+                                 
+                                 <p>De waarde van het attribuut mag niet gelijk zijn aan <em>elektrode1</em>.</p>
+                                 </td>
                            </tr>
                         </tbody>
                      </table>
