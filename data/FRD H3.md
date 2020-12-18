@@ -1,6 +1,4 @@
-# Toelichting
-
-## Inleiding
+## Formatieweerstandonderzoek
 
 Grondwater is een belangrijke bestaansbron. Het grondwater wordt daarom in
 Nederland op grote schaal gemonitord en beheerd. Het beheer van het grondwater
@@ -111,7 +109,7 @@ afkortingen en verder de Nederlandstalige termen gebruiken.
 -   Formatieweerstandonderzoek wordt afgekort tot FRD (Formation Resistance
     Dossier)
 
-![](media/c3d10d9c8ebaeb36b0f74db15f4e3a5c.png)
+![](media/359d12cb8edd448db68f5daf9aec8694.png)
 
 Figuur 2 De samenhang tussen de vijf registratieobjecten binnen het
 grondwatermonitoring domein.
