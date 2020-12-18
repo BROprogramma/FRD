@@ -255,7 +255,7 @@ steeds aangevuld met nieuwe observaties. Er ontstaat zo een tijdreeks van
 periodiek uitgevoerde formatieweerstandonderzoek metingen, via elektroden
 (elektrisch) of inductief (elektromagnetisch) verkregen.
 
-1.  Controleren
+2.  Controleren
 
 De meetreeksen van zowel de elektromagnetische meting als de meting met de
 geo-ohmkabel worden door de bronhouder en/of een derde partij gecontroleerd op
@@ -265,7 +265,7 @@ consistentie en/of plausibiliteit doorlopen worden. De controles en correcties
 leiden tot een keuring of oordeel over de kwaliteit en bruikbaarheid van de
 gegevens.
 
-1.  Omrekenen
+3.  Omrekenen
 
 De omrekening van gemeten weerstand en/of geleidbaarheid naar schijnbare
 formatieweerstand kan alleen plaatsvinden als er voldoende gegevens beschikbaar
@@ -285,7 +285,7 @@ te rekenen naar weerstand, namelijk door het getal 1 te delen door de gemeten
 geleidbaarheid. Dit wordt de reciproke waarde genoemd. Deze berekening vindt
 soms al plaats in het meetinstrument.
 
-1.  Beoordelen
+4.  Beoordelen
 
 De uitkomsten van het proces worden vastgelegd en leiden tot een status
 kwaliteitscontrole die een eindoordeel geeft over de bruikbaarheid van de
