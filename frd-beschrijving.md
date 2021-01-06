@@ -1,4 +1,4 @@
-BESCHRIJVING BHR-AG
+BESCHRIJVING FRD
 ===================
 
-Hier de beschrijvingende tekst horende bij BHR-AG…
+Hier de beschrijvingende tekst horende bij FRD
