@@ -15,7 +15,7 @@
    <body>
       <p>Conceptual model/Formatieweerstand onderzoek (FRD) conceptueel/20201210</p>
       <p>Imvertor: 1.63.0</p>
-      <p>Model release: Conceptualmodel-FormatieweerstandonderzoekFRDconceptueel-0.8-1-20201210-20210125-085522</p>
+      <p>Model release: Conceptualmodel-FormatieweerstandonderzoekFRDconceptueel-0.8-1-20201210-20210125-160752</p>
       <hr>
       <section>
          <h1>Artikel 1 Definitie van registratieobject, entiteiten en attributen</h1>
@@ -434,7 +434,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_association_Model_Formatieweerstandonderzoek_tijdMeetwaardeWaarneming"></a><section id="detail_association_Model_Formatieweerstandonderzoek_tijdMeetwaardeWaarneming">
+                     </section><a class="anchor" id="detail_association_Model_Formatieweerstandonderzoek_gerelateerdebepalingformatieweerstand"></a><section id="detail_association_Model_Formatieweerstandonderzoek_gerelateerdebepalingformatieweerstand">
                      <h4>  bestaat uit</h4>
                      
                      
@@ -447,6 +447,14 @@
                               <td>Associatie van Formatieweerstandonderzoek</td>
                            </tr>
                            <tr>
+                              <th>Definitie</th>
+                              <td>
+                                 
+                                 <p>De gerelateerde Bepaling formatieweerstand waaruit een formatieweerstandonderzoek
+                                    bestaat.</p>
+                                 </td>
+                           </tr>
+                           <tr>
                               <th>Kardinaliteit</th>
                               <td>0..1</td>
                            </tr>
@@ -456,7 +464,7 @@
                            </tr>
                            <tr>
                               <th>Relatierol naam</th>
-                              <td>tijdMeetwaardeWaarneming</td>
+                              <td>gerelateerde bepaling formatieweerstand</td>
                            </tr>
                            <tr>
                               <th>Bron</th>
@@ -470,7 +478,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_association_Model_Formatieweerstandonderzoek_gmwMonitoringBuis"></a><section id="detail_association_Model_Formatieweerstandonderzoek_gmwMonitoringBuis">
+                     </section><a class="anchor" id="detail_association_Model_Formatieweerstandonderzoek_gerelateerdegromdwatermonitoringbuis"></a><section id="detail_association_Model_Formatieweerstandonderzoek_gerelateerdegromdwatermonitoringbuis">
                      <h4>  Gemeten in</h4>
                      
                      
@@ -483,6 +491,14 @@
                               <td>Associatie van Formatieweerstandonderzoek</td>
                            </tr>
                            <tr>
+                              <th>Definitie</th>
+                              <td>
+                                 
+                                 <p>De gerelateerde grondwatermonitoringput en buis waarin het formatieweerstandonderzoek
+                                    is uitgevoerd</p>
+                                 </td>
+                           </tr>
+                           <tr>
                               <th>Kardinaliteit</th>
                               <td>1</td>
                            </tr>
@@ -492,7 +508,7 @@
                            </tr>
                            <tr>
                               <th>Relatierol naam</th>
-                              <td>gmwMonitoringBuis</td>
+                              <td>gerelateerde gromdwatermonitoringbuis</td>
                            </tr>
                            <tr>
                               <th>Bron</th>
@@ -506,7 +522,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_association_Model_Formatieweerstandonderzoek_grondwatermonitoringnet"></a><section id="detail_association_Model_Formatieweerstandonderzoek_grondwatermonitoringnet">
+                     </section><a class="anchor" id="detail_association_Model_Formatieweerstandonderzoek_gerelateerdgrondwatermonitoringnet"></a><section id="detail_association_Model_Formatieweerstandonderzoek_gerelateerdgrondwatermonitoringnet">
                      <h4>  Gemeten ten behoeve van</h4>
                      
                      
@@ -519,6 +535,14 @@
                               <td>Associatie van Formatieweerstandonderzoek</td>
                            </tr>
                            <tr>
+                              <th>Definitie</th>
+                              <td>
+                                 
+                                 <p>Het grondwatermonitoringnet ten behoeve waarvan het formatieweerstandonderzoek is
+                                    uitgevoerd</p>
+                                 </td>
+                           </tr>
+                           <tr>
                               <th>Kardinaliteit</th>
                               <td>1..*</td>
                            </tr>
@@ -528,7 +552,7 @@
                            </tr>
                            <tr>
                               <th>Relatierol naam</th>
-                              <td>grondwatermonitoringnet</td>
+                              <td>gerelateerd grondwatermonitoringnet</td>
                            </tr>
                            <tr>
                               <th>Bron</th>
@@ -542,7 +566,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_d35420e2208"></a><section id="detail_d35420e2208">
+                     </section><a class="anchor" id="detail_d35410e2233"></a><section id="detail_d35410e2233">
                      <h4>  registratiegeschiedenis</h4>
                      
                      
@@ -1460,7 +1484,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_association_Model_Bepalingformatieweerstand_elektromagnetischeMeting"></a><section id="detail_association_Model_Bepalingformatieweerstand_elektromagnetischeMeting">
+                     </section><a class="anchor" id="detail_association_Model_Bepalingformatieweerstand_gerelateerdeelektromagnetischemeetmethode"></a><section id="detail_association_Model_Bepalingformatieweerstand_gerelateerdeelektromagnetischemeetmethode">
                      <h4>  heeft</h4>
                      
                      
@@ -1476,7 +1500,7 @@
                               <th>Definitie</th>
                               <td>
                                  
-                                 <p>De EM-meting die bij de EM-methode hoort</p>
+                                 <p>De gerelateerde Elektromagnetische meetmethode van de Bepaling formatieweerstand.</p>
                                  </td>
                            </tr>
                            <tr>
@@ -1489,7 +1513,7 @@
                            </tr>
                            <tr>
                               <th>Relatierol naam</th>
-                              <td>elektromagnetischeMeting</td>
+                              <td>gerelateerde elektromagnetische meetmethode</td>
                            </tr>
                            <tr>
                               <th>Bron</th>
@@ -1503,7 +1527,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_association_Model_Bepalingformatieweerstand_geoOhmCableMeasurement"></a><section id="detail_association_Model_Bepalingformatieweerstand_geoOhmCableMeasurement">
+                     </section><a class="anchor" id="detail_association_Model_Bepalingformatieweerstand_gerelateerdeGeoohmkabelmeetmethode"></a><section id="detail_association_Model_Bepalingformatieweerstand_gerelateerdeGeoohmkabelmeetmethode">
                      <h4>  heeft</h4>
                      
                      
@@ -1516,6 +1540,13 @@
                               <td>Associatie van Bepaling formatieweerstand</td>
                            </tr>
                            <tr>
+                              <th>Definitie</th>
+                              <td>
+                                 
+                                 <p>De gerelateerde Elektromagnetische meetmethode van de Bepaling formatieweerstand.</p>
+                                 </td>
+                           </tr>
+                           <tr>
                               <th>Kardinaliteit</th>
                               <td>0..*</td>
                            </tr>
@@ -1525,7 +1556,7 @@
                            </tr>
                            <tr>
                               <th>Relatierol naam</th>
-                              <td>geoOhmCableMeasurement</td>
+                              <td>gerelateerde Geo-ohmkabel meetmethode</td>
                            </tr>
                            <tr>
                               <th>Bron</th>
@@ -1768,7 +1799,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_association_Model_Elektromagnetischemeetmethode_SchijnbareFormatieweerstandBerekening"></a><section id="detail_association_Model_Elektromagnetischemeetmethode_SchijnbareFormatieweerstandBerekening">
+                     </section><a class="anchor" id="detail_association_Model_Elektromagnetischemeetmethode_gerelateerdeSchijnbareformatieweerstandberekening"></a><section id="detail_association_Model_Elektromagnetischemeetmethode_gerelateerdeSchijnbareformatieweerstandberekening">
                      <h4>  gebruikt in</h4>
                      
                      
@@ -1784,8 +1815,8 @@
                               <th>Definitie</th>
                               <td>
                                  
-                                 <p>De meetwaardes van een electromagnetische meting die gebruikt worden voor de schijnbare
-                                    formatieweerstand berekening</p>
+                                 <p>De  schijnbare formatieweerstand berekening die gebruikt is bij de Elektromagnetische
+                                    meetmethode</p>
                                  </td>
                            </tr>
                            <tr>
@@ -1798,7 +1829,7 @@
                            </tr>
                            <tr>
                               <th>Relatierol naam</th>
-                              <td>SchijnbareFormatieweerstandBerekening</td>
+                              <td>gerelateerde Schijnbare formatieweerstand berekening</td>
                            </tr>
                            <tr>
                               <th>Bron</th>
@@ -1812,7 +1843,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_association_Model_Elektromagnetischemeetmethode_instrumentconfiguratie"></a><section id="detail_association_Model_Elektromagnetischemeetmethode_instrumentconfiguratie">
+                     </section><a class="anchor" id="detail_association_Model_Elektromagnetischemeetmethode_gerelateerdeinstrumentconfiguratie"></a><section id="detail_association_Model_Elektromagnetischemeetmethode_gerelateerdeinstrumentconfiguratie">
                      <h4>  uitgevoerd met</h4>
                      
                      
@@ -1828,7 +1859,7 @@
                               <th>Definitie</th>
                               <td>
                                  
-                                 <p>De instrumentconfiguratie waarmee de EM-meting is uitgevoerd.</p>
+                                 <p>De instrumentconfiguratie waarmee de elektromagnetische meting is uitgevoerd.</p>
                                  </td>
                            </tr>
                            <tr>
@@ -1841,7 +1872,7 @@
                            </tr>
                            <tr>
                               <th>Relatierol naam</th>
-                              <td>instrumentconfiguratie</td>
+                              <td>gerelateerde instrumentconfiguratie</td>
                            </tr>
                            <tr>
                               <th>Bron</th>
@@ -1855,7 +1886,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_d35420e6854"></a><section id="detail_d35420e6854">
+                     </section><a class="anchor" id="detail_d35410e6911"></a><section id="detail_d35410e6911">
                      <h4>  meetreeks</h4>
                      
                      
@@ -1969,7 +2000,10 @@
                            </tr>
                            <tr>
                               <th>Regels</th>
-                              <td>testregel</td>
+                              <td>
+                                 
+                                 <p>De waarde van het attribuut moet uniek zijn binnen het formatieweerstandonderzoek.</p>
+                                 </td>
                            </tr>
                         </tbody>
                      </table>
@@ -2515,7 +2549,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_d35420e9400"></a><section id="detail_d35420e9400">
+                     </section><a class="anchor" id="detail_d35410e9462"></a><section id="detail_d35410e9462">
                      <h4>  meetrecord</h4>
                      
                      
@@ -3085,7 +3119,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_association_Model_Geoohmmetingmeetwaarde_SchijnbareFormatieweerstandBerekening"></a><section id="detail_association_Model_Geoohmmetingmeetwaarde_SchijnbareFormatieweerstandBerekening">
+                     </section><a class="anchor" id="detail_association_Model_Geoohmmetingmeetwaarde_gerelateerdeschijnbareformatieweerstandberekening"></a><section id="detail_association_Model_Geoohmmetingmeetwaarde_gerelateerdeschijnbareformatieweerstandberekening">
                      <h4>  gebruikt in</h4>
                      
                      
@@ -3101,8 +3135,7 @@
                               <th>Definitie</th>
                               <td>
                                  
-                                 <p>De Geoohmmeting meetwaarde die gebruikt wordt voor de berekening van de Schijnbare
-                                    formatieweerstand. </p>
+                                 <p>De  schijnbare formatieweerstand berekening die gebruikt is bij de geo-ohmmeting </p>
                                  </td>
                            </tr>
                            <tr>
@@ -3115,7 +3148,7 @@
                            </tr>
                            <tr>
                               <th>Relatierol naam</th>
-                              <td>SchijnbareFormatieweerstandBerekening</td>
+                              <td>gerelateerde schijnbare formatieweerstand berekening</td>
                            </tr>
                            <tr>
                               <th>Bron</th>
@@ -3134,16 +3167,9 @@
                                  <p>De entiteit Schijnbare formatieweerstand berekening mag voor IMBRO/A gegevens ontbreken</p>
                                  </td>
                            </tr>
-                           <tr>
-                              <th>Toelichting</th>
-                              <td>
-                                 
-                                 <p>Dit is een test toelichting</p>
-                                 </td>
-                           </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_association_Model_Geoohmmetingmeetwaarde_meetconfiguratie"></a><section id="detail_association_Model_Geoohmmetingmeetwaarde_meetconfiguratie">
+                     </section><a class="anchor" id="detail_association_Model_Geoohmmetingmeetwaarde_gerelateerdemeetconfiguratie"></a><section id="detail_association_Model_Geoohmmetingmeetwaarde_gerelateerdemeetconfiguratie">
                      <h4>  uitgevoerd met</h4>
                      
                      
@@ -3156,6 +3182,13 @@
                               <td>Associatie van Geo-ohmmeting meetwaarde</td>
                            </tr>
                            <tr>
+                              <th>Definitie</th>
+                              <td>
+                                 
+                                 <p>De meetconfiguratie waarmee de geo-ohmmeting is uitgevoerd </p>
+                                 </td>
+                           </tr>
+                           <tr>
                               <th>Kardinaliteit</th>
                               <td>1</td>
                            </tr>
@@ -3165,7 +3198,7 @@
                            </tr>
                            <tr>
                               <th>Relatierol naam</th>
-                              <td>meetconfiguratie</td>
+                              <td>gerelateerde meetconfiguratie </td>
                            </tr>
                            <tr>
                               <th>Bron</th>
@@ -3254,7 +3287,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_d35420e12055"></a><section id="detail_d35420e12055">
+                     </section><a class="anchor" id="detail_d35410e12094"></a><section id="detail_d35410e12094">
                      <h4>  meetpaar</h4>
                      
                      
@@ -3308,7 +3341,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_d35420e12269"></a><section id="detail_d35420e12269">
+                     </section><a class="anchor" id="detail_d35410e12308"></a><section id="detail_d35410e12308">
                      <h4>  stroompaar</h4>
                      
                      
@@ -3391,7 +3424,7 @@
                               </td>
                         </tr>
                      </tbody>
-                  </table><a class="anchor" id="detail_d35420e12641"></a><section id="detail_d35420e12641">
+                  </table><a class="anchor" id="detail_d35410e12680"></a><section id="detail_d35410e12680">
                      <h4>  elektrode1</h4>
                      
                      
@@ -3445,7 +3478,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_d35420e12856"></a><section id="detail_d35420e12856">
+                     </section><a class="anchor" id="detail_d35410e12895"></a><section id="detail_d35410e12895">
                      <h4>  elektrode2</h4>
                      
                      
@@ -3931,7 +3964,7 @@
                            </tr>
                         </tbody>
                      </table>
-                     </section><a class="anchor" id="detail_association_Model_Schijnbareformatieweerstandberekening_formatieweerstand"></a><section id="detail_association_Model_Schijnbareformatieweerstandberekening_formatieweerstand">
+                     </section><a class="anchor" id="detail_association_Model_Schijnbareformatieweerstandberekening_bepaaldeschijnbareformatieweerstandwaardes"></a><section id="detail_association_Model_Schijnbareformatieweerstandberekening_bepaaldeschijnbareformatieweerstandwaardes">
                      <h4>  heeft</h4>
                      
                      
@@ -3947,7 +3980,8 @@
                               <th>Definitie</th>
                               <td>
                                  
-                                 <p>De berekende schijnbare formatieweerstand waarde</p>
+                                 <p>De gerelateerde schijnbare formatieweerstand waardes van de formatieweerstand berekening
+                                    </p>
                                  </td>
                            </tr>
                            <tr>
@@ -3960,7 +3994,7 @@
                            </tr>
                            <tr>
                               <th>Relatierol naam</th>
-                              <td>formatieweerstand</td>
+                              <td>bepaalde schijnbare formatieweerstand waardes </td>
                            </tr>
                            <tr>
                               <th>Bron</th>
