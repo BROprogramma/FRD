@@ -16,16 +16,20 @@
             <gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
         </xs:appinfo>
     </xs:annotation>
-    
+
     <!--
     <xs:import namespace="http://www.broservices.nl/xsd/brocommon/3.0" schemaLocation="https://schema.broservices.nl/xsd/brocommon/3.0/brocommon.xsd"/>
     <xs:import namespace="http://www.broservices.nl/xsd/frdcommon/1.0" schemaLocation="https://schema.broservices.nl/xsd/frdcommon/1.0/frdcommon.xsd"/>
     <xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://schema.broservices.nl/profile/gml/1.0/gml-profile.xsd"/>
     -->
+
     <xs:import namespace="http://www.broservices.nl/xsd/brocommon/3.0" schemaLocation="https://schema.broservices.nl/xsd/brocommon/3.0/brocommon.xsd"/>
     <xs:import namespace="http://www.broservices.nl/xsd/frdcommon/1.0" schemaLocation="./frdcommon.xsd"/>
     <xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://schema.broservices.nl/profile/gml/1.0/gml-profile.xsd"/>
-    
+
+    <xs:element name="dispatchDataRequest" type="brocom:DispatchDataRequestType" />
+    <xs:element name="parseFault" type="brocom:ParseFaultType" />
+
     <xs:element name="FRD_O_DP" type="dsfrd:FRD_O_DPType" substitutionGroup="brocom:RegistrationObject">
         <xs:annotation>
             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het uitgiftedocument dat wordt uitgeleverd als de afnemer tevens de bronhouder of dataleverancier is van het registratieobject.</xs:documentation>
@@ -35,12 +39,6 @@
         <xs:complexContent>
             <xs:extension base="brocom:RegistrationObjectType">
                 <xs:sequence>
-                    <xs:element name="registrationHistory" type="brocom:RegistrationHistoryType" nillable="false" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De gegevens die de geschiedenis van het object in de registratie ondergrond markeren.
-Explanation: De gegevens staan niet in een brondocument, maar worden automatisch door de basisregistratie ondergrond gegenereerd.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
                     <xs:element name="researchFirstDate" type="xs:date" minOccurs="0" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De datum waarop de eerste meting van het formatieweerstandonderzoek is uitgevoerd.
@@ -53,18 +51,23 @@ Explanation: Het gegeven staat niet in een brondocument, maar wordt automatisch 
 Explanation: Het gegeven staat niet in een brondocument, maar wordt automatisch door de basisregistratie ondergrond afgeleid uit recentste datum meting van de entiteit Elektromagnetische meting of Geo-ohmkabel meting</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="groundwaterMonitoringTube" type="frdcom:MonitoringTubePropertyType" nillable="false" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="registrationHistory" type="brocom:RegistrationHistoryType" nillable="false" minOccurs="1" maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De gegevens die de geschiedenis van het object in de registratie ondergrond markeren.
+Explanation: De gegevens staan niet in een brondocument, maar worden automatisch door de basisregistratie ondergrond gegenereerd.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
                     <xs:element name="groundwaterMonitoringNet" type="frdcom:GroundwaterMonitoringNetPropertyType" nillable="false" minOccurs="1" maxOccurs="unbounded"/>
+                    <xs:element name="groundwaterMonitoringTube" type="frdcom:MonitoringTubePropertyType" nillable="false" minOccurs="1" maxOccurs="1"/>
                     <xs:element name="relatedFormationResistanceDetermination" type="frdcom:FormationResistanceDeterminationPropertyType" nillable="false" minOccurs="0" maxOccurs="1"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
     <xs:complexType name="FRD_O_DPPropertyType">
-        <xs:sequence minOccurs="0">
+        <xs:sequence minOccurs="1">
             <xs:element ref="dsfrd:FRD_O_DP"/>
         </xs:sequence>
-        <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
 
     <xs:element name="FRD_O" type="dsfrd:FRD_OType" substitutionGroup="dsfrd:FRD_O_DP">
@@ -78,30 +81,12 @@ Explanation: Het gegeven staat niet in een brondocument, maar wordt automatisch 
         </xs:complexContent>
     </xs:complexType>
     <xs:complexType name="FRD_OPropertyType">
-        <xs:sequence minOccurs="0">
+        <xs:sequence minOccurs="1">
             <xs:element ref="dsfrd:FRD_O"/>
         </xs:sequence>
-        <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
-
-    <xs:element name="DispatchDataRequest" type="dsfrd:DispatchDataRequestType" substitutionGroup="brocom:DispatchDataRequest">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het DispatchDataRequest is een specialisatie van de abstract klasse DispatchDataRequest in de package brocommon.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="DispatchDataRequestType">
-        <xs:complexContent>
-            <xs:extension base="brocom:DispatchDataRequestType"/>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="DispatchDataRequestPropertyType">
-        <xs:sequence minOccurs="0">
-            <xs:element ref="dsfrd:DispatchDataRequest"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
-    </xs:complexType>
-
-    <xs:element name="DispatchDataResponse" type="dsfrd:DispatchDataResponseType" substitutionGroup="brocom:DispatchResponse">
+    
+    <xs:element name="dispatchDataResponse" type="dsfrd:DispatchDataResponseType">
         <xs:annotation>
             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het bericht DispatchDataResponse is een specialisatie van de abstract klasse DispatchDataResponse uit de package brocommon, waaraan het een dispatchDocument toevoegt. Met dit bericht worden, als response op een DispatchDataRequest, de gegevens over een specifiek formatieweerstandonderzoek registratieobject verzonden naar de aanvrager.</xs:documentation>
         </xs:annotation>
@@ -118,11 +103,5 @@ Explanation: Het gegeven staat niet in een brondocument, maar wordt automatisch 
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="DispatchDataResponsePropertyType">
-        <xs:sequence minOccurs="0">
-            <xs:element ref="dsfrd:DispatchDataResponse"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
 </xs:schema>

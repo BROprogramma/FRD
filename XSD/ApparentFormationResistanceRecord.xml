@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataRecord
+        id="ApparentFormationResistanceRecord"
+        xmlns="http://www.opengis.net/swe/2.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.opengis.net/swe/2.0 https://schema.broservices.nl/profile/swe/1.0/swe-profile.xsd">
+    <label>Schijnbare formatieweerstand record</label>
+    <field name="verticalPosition">
+        <Quantity>
+            <uom code="m"/>
+        </Quantity>
+    </field>
+    <field name="apparentFormationResistance">
+        <Quantity>
+            <uom code="ohm.m"/>
+        </Quantity>
+    </field>
+    <field name="qualityControlStatus">
+        <Category>
+            <codeSpace xlink:href="urn:bro:frd:StatusQualityControl"/>
+        </Category>
+    </field>
+</DataRecord>

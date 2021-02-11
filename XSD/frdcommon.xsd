@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema 
-        xmlns:bro="http://www.broservices.nl/xsd/brocommon/3.0" 
         xmlns:brocom="http://www.broservices.nl/xsd/brocommon/3.0" 
         xmlns:frdcom="http://www.broservices.nl/xsd/frdcommon/1.0" 
         xmlns:gml="http://www.opengis.net/gml/3.2" 
@@ -17,10 +16,11 @@
             <gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
         </xs:appinfo>
     </xs:annotation>
+
     <xs:import namespace="http://www.broservices.nl/xsd/brocommon/3.0" schemaLocation="https://schema.broservices.nl/xsd/brocommon/3.0/brocommon.xsd"/>
     <xs:import namespace="http://www.opengis.net/swe/2.0" schemaLocation="https://schema.broservices.nl/profile/swe/1.0/swe-profile.xsd"/>
-    <xs:import namespace="http://www.broservices.nl/xsd/brocommon/3.0" schemaLocation="https://schema.broservices.nl/xsd/brocommon/3.0/brocommon.xsd"/>
     <xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://schema.broservices.nl/profile/gml/1.0/gml-profile.xsd"/>
+
     <xs:element name="CalculatedApparentFormationResistance" type="frdcom:CalculatedApparentFormationResistanceType" substitutionGroup="gml:AbstractFeature">
         <xs:annotation>
             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het totaal van formatieweerstand berekeningen.
@@ -31,7 +31,7 @@ Explanation: Als bij de Geo-ohmkabel meetmethode onder het IMBR/A-regime de waar
         <xs:complexContent>
             <xs:extension base="gml:AbstractFeatureType">
                 <xs:sequence>
-                    <xs:element name="calculationOperator" type="bro:OrganizationType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="calculationOperator" type="brocom:OrganizationType" nillable="true" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het KvK-nummer van de onderneming of de maatschappelijke activiteit van de rechtspersoon die voor de bronhouder geldt als verantwoordelijk voor de uitvoering van de berekening van de schijnbare formatieweerstand, of het equivalent daarvan in een handelsregister van een andere lidstaat van de Europese Unie dan Nederland.
 Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de bronhouder.</xs:documentation>
@@ -52,11 +52,11 @@ Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de b
         </xs:complexContent>
     </xs:complexType>
     <xs:complexType name="CalculatedApparentFormationResistancePropertyType">
-        <xs:sequence minOccurs="0">
+        <xs:sequence minOccurs="1">
             <xs:element ref="frdcom:CalculatedApparentFormationResistance"/>
         </xs:sequence>
-        <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
+
     <xs:element name="ElectromagneticMeasurement" type="frdcom:ElectromagneticMeasurementType" substitutionGroup="gml:AbstractFeature">
         <xs:annotation>
             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De kenmerken van de elektromagnetische meting die geleid hebben tot het verkrijgen van een meetreeks van elektromagnetische metingen in een monitoringbuis van een grondwatermonitoringput.
@@ -72,7 +72,7 @@ Explanation: Formatieweerstandonderzoek wordt uitgevoerd of volgens de electroma
                             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De datum waarop de meting is uitgevoerd.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="measurementOperator" type="bro:OrganizationType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="measurementOperator" type="brocom:OrganizationType" nillable="true" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het KvK-nummer van de onderneming of de maatschappelijke activiteit van de rechtspersoon die voor de bronhouder geldt als verantwoordelijk voor de uitvoering van de meting, of het equivalent daarvan in een handelsregister van een andere lidstaat van de Europese Unie dan Nederland.
 Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de bronhouder.</xs:documentation>
@@ -96,19 +96,19 @@ Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de b
                             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het protocol of werkvoorschrift dat is toegepast bij de beoordeling van de kwaliteit van de meting.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
+                    <xs:element name="measurementSeries" type="swe:DataArrayPropertyType" nillable="false" minOccurs="1" maxOccurs="1"/>
                     <xs:element name="relatedInstrumenconfiguration" type="frdcom:InstrumentConfigurationPropertyType" nillable="false" minOccurs="1" maxOccurs="1"/>
                     <xs:element name="relatedCalculatedApparentFormationResistance" type="frdcom:CalculatedApparentFormationResistancePropertyType" nillable="false" minOccurs="1" maxOccurs="1"/>
-                    <xs:element name="measurementSeries" type="swe:DataArrayPropertyType" nillable="false" minOccurs="1" maxOccurs="1"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
     <xs:complexType name="ElectromagneticMeasurementPropertyType">
-        <xs:sequence minOccurs="0">
+        <xs:sequence minOccurs="1">
             <xs:element ref="frdcom:ElectromagneticMeasurement"/>
         </xs:sequence>
-        <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
+
     <xs:element name="FormationResistanceDetermination" type="frdcom:FormationResistanceDeterminationType" substitutionGroup="gml:AbstractFeature">
         <xs:annotation>
             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De kenmerken van de activiteiten die geleid hebben tot het bepalen van de formatieweerstand in een monitoringbuis van een grondwatermonitoringput, in een bepaalde periode.</xs:documentation>
@@ -144,11 +144,11 @@ Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de b
         </xs:complexContent>
     </xs:complexType>
     <xs:complexType name="FormationResistanceDeterminationPropertyType">
-        <xs:sequence minOccurs="0">
+        <xs:sequence minOccurs="1">
             <xs:element ref="frdcom:FormationResistanceDetermination"/>
         </xs:sequence>
-        <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
+
     <xs:element name="GeoElectricMeasurement" type="frdcom:GeoElectricMeasurementType" substitutionGroup="gml:AbstractFeature">
         <xs:annotation>
             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De kenmerken van de geo-ohmkabelmeting die geleid hebben tot het verkrijgen van een reeks meetwaardes gemeten aan een geo-ohmkabel aan een monitoringbuis van een grondwatermonitoringput.
@@ -165,7 +165,7 @@ Explanation: Formatieweerstandonderzoek wordt uitgevoerd of volgens de electroma
 Explanation: Deze datum is voor gebruikers de belangrijkste datum, omdat dit de datum is waarop meetwaarden betrekking hebben.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element name="measurementOperator" type="bro:OrganizationType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="measurementOperator" type="brocom:OrganizationType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het KvK-nummer van de onderneming of de maatschappelijke activiteit van de rechtspersoon die voor de bronhouder geldt als verantwoordelijk voor de uitvoering van de meting, of het equivalent daarvan in een handelsregister van een andere lidstaat van de Europese Unie dan Nederland.
 Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de bronhouder.</xs:documentation>
@@ -200,11 +200,11 @@ Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de b
         </xs:complexContent>
     </xs:complexType>
     <xs:complexType name="GeoElectricMeasurementPropertyType">
-        <xs:sequence minOccurs="0">
+        <xs:sequence minOccurs="1">
             <xs:element ref="frdcom:GeoElectricMeasurement"/>
         </xs:sequence>
-        <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
+
     <xs:element name="GroundwaterMonitoringNet" type="frdcom:GroundwaterMonitoringNetType" substitutionGroup="gml:AbstractFeature">
         <xs:annotation>
             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het grondwatermonitoringnet waarin het formatieweerstandonderzoek wordt uitgevoerd.
@@ -215,7 +215,7 @@ Explanation: Het registratieobject Grondwatermonitoringnet wordt in een aparte B
         <xs:complexContent>
             <xs:extension base="gml:AbstractFeatureType">
                 <xs:sequence>
-                    <xs:element name="broId" type="bro:RegistrationObjectCodeType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="broId" type="brocom:RegistrationObjectCodeType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De identificatie van het grondwatermonitoringnet in de basisregistratie ondergrond.</xs:documentation>
                         </xs:annotation>
@@ -225,11 +225,11 @@ Explanation: Het registratieobject Grondwatermonitoringnet wordt in een aparte B
         </xs:complexContent>
     </xs:complexType>
     <xs:complexType name="GroundwaterMonitoringNetPropertyType">
-        <xs:sequence minOccurs="0">
+        <xs:sequence minOccurs="1">
             <xs:element ref="frdcom:GroundwaterMonitoringNet"/>
         </xs:sequence>
-        <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
+
     <xs:element name="InstrumentConfiguration" type="frdcom:InstrumentConfigurationType" substitutionGroup="gml:AbstractFeature">
         <xs:annotation>
             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De configuratiegegevens van het elektromagnetisch meetinstrument.
@@ -246,7 +246,7 @@ Explanation: Het is voor de herleidbaarheid van de gegevens volgens de elektroma
                         </xs:annotation>
                         <xs:simpleType>
                             <xs:restriction base="xs:string">
-                                <xs:length value="40"/>
+                                <xs:maxLength value="40"/>
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:element>
@@ -332,6 +332,7 @@ Explanation: Het meetinstrument kan twee ontvangstspoelen bevatten. Bij aanwezig
         </xs:sequence>
         <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
+
     <xs:element name="MeasurementConfiguration" type="frdcom:MeasurementConfigurationType" substitutionGroup="gml:AbstractFeature">
         <xs:annotation>
             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De meetconfiguratie waarmee de geo-ohmkabelmeting is gedaan.
@@ -348,7 +349,7 @@ Explanation: Iedere individuele meting aan een geo-ohmkabel wordt aan de hand va
                         </xs:annotation>
                         <xs:simpleType>
                             <xs:restriction base="xs:string">
-                                <xs:length value="40"/>
+                                <xs:maxLength value="40"/>
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:element>
@@ -372,6 +373,7 @@ Explanation: Iedere individuele meting aan een geo-ohmkabel wordt aan de hand va
         </xs:sequence>
         <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
+
     <xs:element name="MonitoringTube" type="frdcom:MonitoringTubeType" substitutionGroup="gml:AbstractFeature">
         <xs:annotation>
             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De gegevens die nodig zijn voor de unieke identificatie van een specifieke buis in een grondwatermonitoringput.
@@ -382,7 +384,7 @@ Explanation: De monitoringbuis als onderdeel van het registratieobject Grondwate
         <xs:complexContent>
             <xs:extension base="gml:AbstractFeatureType">
                 <xs:sequence>
-                    <xs:element name="broId" type="bro:RegistrationObjectCodeType" minOccurs="1" maxOccurs="1">
+                    <xs:element name="broId" type="brocom:RegistrationObjectCodeType" minOccurs="1" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De identificatie van de grondwatermonitoringbuis in de basisregistratie ondergrond.</xs:documentation>
                         </xs:annotation>
@@ -397,53 +399,11 @@ Explanation: De monitoringbuis als onderdeel van het registratieobject Grondwate
         </xs:complexContent>
     </xs:complexType>
     <xs:complexType name="MonitoringTubePropertyType">
-        <xs:sequence minOccurs="0">
+        <xs:sequence minOccurs="1">
             <xs:element ref="frdcom:MonitoringTube"/>
         </xs:sequence>
-        <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
-    <xs:complexType name="ApparentFormationResistanceRecordType">
-        <xs:complexContent>
-            <xs:extension base="swe:DataRecordType">
-                <xs:sequence>
-                    <xs:element name="verticalPosition" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De verticale positie waarop de formatieweerstand is bepaald.
-Explanation: De verticale positie wordt afgeleid van de positie van de bovenkant van de monitoringbuis.waarin de meting wordt uitgevoerd.</xs:documentation>
-                        </xs:annotation>
-                        <xs:complexType>
-                            <xs:simpleContent>
-                                <xs:restriction base="gml:MeasureType">
-                                    <xs:attribute name="uom" type="gml:UomIdentifier" use="required" fixed="m"/>
-                                </xs:restriction>
-                            </xs:simpleContent>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="apparentFormationResistance" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De schijnbare formatieweerstand is de omrekening van de gemeten weerstand of gemeten geleidbaarheid op een bepaalde diepte naar een schijnbare formatieweerstand.</xs:documentation>
-                        </xs:annotation>
-                        <xs:complexType>
-                            <xs:simpleContent>
-                                <xs:restriction base="gml:MeasureType">
-                                    <xs:attribute name="uom" type="gml:UomIdentifier" use="required" fixed="ohm.m"/>
-                                </xs:restriction>
-                            </xs:simpleContent>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="qualityControlStatus" type="frdcom:QualityControlStatusType" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:appinfo>
-                                <CodeListName>QualityControlStatus</CodeListName>
-                                <CodeListURI/>
-                            </xs:appinfo>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het eindoordeel van de bronhouder over de kwaliteit van een individueel meetwaarde van de formatieweerstand op basis van een, voor de meting gebruikte, beoordelingsprocedure.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
+
     <xs:complexType name="ElectrodePairType">
         <xs:sequence>
             <xs:element name="electrode1" type="frdcom:GMWElectrodeReferenceType" nillable="false" minOccurs="1" maxOccurs="1">
@@ -457,52 +417,6 @@ Explanation: De verticale positie wordt afgeleid van de positie van de bovenkant
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="ElectromagneticMeasurementRecordType">
-        <xs:complexContent>
-            <xs:extension base="swe:DataRecordType">
-                <xs:sequence>
-                    <xs:element name="verticalPosition" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De verticale positie wordt afgeleid van de positie van de bovenkant van de buis waarin de meting wordt uitgevoerd.</xs:documentation>
-                        </xs:annotation>
-                        <xs:complexType>
-                            <xs:simpleContent>
-                                <xs:restriction base="gml:MeasureType">
-                                    <xs:attribute name="uom" type="gml:UomIdentifier" use="required" fixed="m"/>
-                                </xs:restriction>
-                            </xs:simpleContent>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="primaryValue" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De primaire meetwaarde van de elektromagnetische meting.
-Explanation: Bij een elektromagnetische meting is deze waarde altijd aanwezig. Bij een meetinstrument met meerdere spoelen is dit de meting tussen de spoelen met het grootste afstandinterval.</xs:documentation>
-                        </xs:annotation>
-                        <xs:complexType>
-                            <xs:simpleContent>
-                                <xs:restriction base="gml:MeasureType">
-                                    <xs:attribute name="uom" type="gml:UomIdentifier" use="required" fixed="mS/m"/>
-                                </xs:restriction>
-                            </xs:simpleContent>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="secondaryValue" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De aanvullende secundaire meetwaarde van de elektromagnetische meting.
-Explanation: Bij een meetinstrument met meerdere ontvangstspoelen is dit de meting tussen de spoelen met het kleinste afstandsinterval, de short normal.</xs:documentation>
-                        </xs:annotation>
-                        <xs:complexType>
-                            <xs:simpleContent>
-                                <xs:restriction base="gml:MeasureType">
-                                    <xs:attribute name="uom" type="gml:UomIdentifier" use="required" fixed="mS/m"/>
-                                </xs:restriction>
-                            </xs:simpleContent>
-                        </xs:complexType>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
     </xs:complexType>
     <xs:complexType name="GeoElectricMeasurementValueType">
         <xs:sequence>
@@ -523,7 +437,7 @@ Explanation: Bij een meetinstrument met meerdere ontvangstspoelen is dit de meti
     </xs:complexType>
     <xs:complexType name="GMWElectrodeReferenceType">
         <xs:sequence>
-            <xs:element name="broId" type="bro:RegistrationObjectCodeType" minOccurs="1" maxOccurs="1">
+            <xs:element name="broId" type="brocom:RegistrationObjectCodeType" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De identificatie van de grondwatermonitoringput in de basisregistratie ondergrond</xs:documentation>
                 </xs:annotation>
@@ -567,6 +481,7 @@ Explanation: De positie van een elektrode wordt nooit direct bepaald. Bij inrich
             </xs:element>
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="DeterminationProcedureType">
         <xs:simpleContent>
             <xs:restriction base="gml:CodeWithAuthorityType">

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataRecord
+        id="ElectromagneticMeasurementRecord"
+        xmlns="http://www.opengis.net/swe/2.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.opengis.net/swe/2.0 https://schema.broservices.nl/profile/swe/1.0/swe-profile.xsd">
+    <label>Elektromagnetische meting record</label>
+    <field name="verticalPosition">
+        <Quantity>
+            <uom code="m"/>
+        </Quantity>
+    </field>
+    <field name="primaryValue">
+        <Quantity>
+            <uom code="mS/m"/>
+        </Quantity>
+    </field>
+    <field name="secondaryValue">
+        <Quantity>
+            <description>De waarde NaN geeft aan dat het gegeven ontbreekt (kardinaliteit=0).</description>
+            <nilValues>
+                <NilValues>
+                    <nilValue reason="urn:ogc:def:nil:OGC:unknown">NaN</nilValue>
+                </NilValues>
+            </nilValues>
+            <uom code="mS/m"/>
+        </Quantity>
+    </field>
+</DataRecord>

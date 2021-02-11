@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions 
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+        xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" 
+        xmlns:brocom="http://www.broservices.nl/xsd/brocommon/3.0" 
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+        xmlns:msg="http://www.broservices.nl/xsd/isfrd/1.0" 
+        xmlns:tns="http://www.broservices.nl/wsdl/isfrd/1.0" 
+        name="isfrd" 
+        targetNamespace="http://www.broservices.nl/wsdl/isfrd/1.0">
+    <wsdl:documentation>
+        This  WSDL defines the webservice for the FRD intake webservice (GroundwaterLevelDossier)
+        in the context of the baseregistry subsurface (Basisregistratie Ondergrond).
+        This is version 0.1.0
+        Changes compared to Version:0.1.0:
+        - 
+    </wsdl:documentation>
+    <wsdl:types>
+        <xsd:schema xmlns:tns="http://www.broservices.nl/wsdl/isfrd/1.0" targetNamespace="http://www.broservices.nl/wsdl/isfrd/1.0">
+            <!--
+            <xsd:import namespace="http://www.broservices.nl/xsd/isfrd/1.0" schemaLocation="https://schema.broservices.nl/xsd/isfrd/1.0/isfrd-messages.xsd" />
+            -->
+            <xsd:import namespace="http://www.broservices.nl/xsd/isfrd/1.0" schemaLocation="isfrd-messages.xsd"/>
+            <xsd:import namespace="http://www.broservices.nl/xsd/brocommon/3.0" schemaLocation="https://schema.broservices.nl/xsd/brocommon/3.0/brocommon.xsd" />
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="registrationRequest">
+        <wsdl:part name="request" element="msg:registrationRequest"/>
+    </wsdl:message>
+    <wsdl:message name="replaceRequest">
+        <wsdl:part name="request" element="msg:replaceRequest"/>
+    </wsdl:message>
+    <wsdl:message name="insertRequest">
+        <wsdl:part name="request" element="msg:insertRequest"/>
+    </wsdl:message>
+    <wsdl:message name="moveRequest">
+        <wsdl:part name="request" element="msg:moveRequest"/>
+    </wsdl:message>
+    <wsdl:message name="deleteRequest">
+        <wsdl:part name="request" element="msg:deleteRequest"/>
+    </wsdl:message>
+    <wsdl:message name="intakeResponse">
+        <wsdl:part name="response" element="msg:intakeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="parseSoapFault">
+        <wsdl:part name="parseFault" element="msg:parseFault"/>
+    </wsdl:message>
+    <wsdl:message name="DeliveryResponsiblePartyHeader">
+        <wsdl:part name="deliveryResponsibleParty" element="brocom:deliveryResponsibleParty"/>
+    </wsdl:message>
+    <wsdl:portType name="isfrd">
+        <wsdl:operation name="register">
+            <wsdl:input message="tns:registrationRequest" wsam:Action="http://www.broservices.nl/wus/isfrd/registrationRequest"/>
+            <wsdl:output message="tns:intakeResponse" wsam:Action="http://www.broservices.nl/wus/isfrd/intakeResponse"/>
+            <wsdl:fault name="parseFault" message="tns:parseSoapFault" wsam:Action="http://www.broservices.nl/wus/isfrd/parseSoapFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="replace">
+            <wsdl:input message="tns:replaceRequest" wsam:Action="http://www.broservices.nl/wus/isfrd/replaceRequest"/>
+            <wsdl:output message="tns:intakeResponse" wsam:Action="http://www.broservices.nl/wus/isfrd/intakeResponse"/>
+            <wsdl:fault name="parseFault" message="tns:parseSoapFault" wsam:Action="http://www.broservices.nl/wus/isfrd/parseSoapFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="insert">
+            <wsdl:input message="tns:insertRequest" wsam:Action="http://www.broservices.nl/wus/isfrd/insertRequest"/>
+            <wsdl:output message="tns:intakeResponse" wsam:Action="http://www.broservices.nl/wus/isfrd/intakeResponse"/>
+            <wsdl:fault name="parseFault" message="tns:parseSoapFault" wsam:Action="http://www.broservices.nl/wus/isfrd/parseSoapFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="move">
+            <wsdl:input message="tns:moveRequest" wsam:Action="http://www.broservices.nl/wus/isfrd/moveRequest"/>
+            <wsdl:output message="tns:intakeResponse" wsam:Action="http://www.broservices.nl/wus/isfrd/intakeResponse"/>
+            <wsdl:fault name="parseFault" message="tns:parseSoapFault" wsam:Action="http://www.broservices.nl/wus/isfrd/parseSoapFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <wsdl:input message="tns:deleteRequest" wsam:Action="http://www.broservices.nl/wus/isfrd/deleteRequest"/>
+            <wsdl:output message="tns:intakeResponse" wsam:Action="http://www.broservices.nl/wus/isfrd/intakeResponse"/>
+            <wsdl:fault name="parseFault" message="tns:parseSoapFault" wsam:Action="http://www.broservices.nl/wus/isfrd/parseSoapFault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="isfrd_SOAP" type="tns:isfrd">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="register">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <soap:header message="tns:DeliveryResponsiblePartyHeader" part="deliveryResponsibleParty" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="parseFault">
+                <soap:fault name="parseFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="replace">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <soap:header message="tns:DeliveryResponsiblePartyHeader" part="deliveryResponsibleParty" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="parseFault">
+                <soap:fault name="parseFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="insert">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <soap:header message="tns:DeliveryResponsiblePartyHeader" part="deliveryResponsibleParty" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="parseFault">
+                <soap:fault name="parseFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="move">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <soap:header message="tns:DeliveryResponsiblePartyHeader" part="deliveryResponsibleParty" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="parseFault">
+                <soap:fault name="parseFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <soap:header message="tns:DeliveryResponsiblePartyHeader" part="deliveryResponsibleParty" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="parseFault">
+                <soap:fault name="parseFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="isfrd">
+        <wsdl:port name="isfrd_SOAP" binding="tns:isfrd_SOAP">
+            <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
