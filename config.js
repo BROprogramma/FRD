@@ -3,21 +3,15 @@ var respecConfig = {
   specType: "IM",
   //subtitle: "BRO gegevenscatalogus",
   publishDate: "2021-02-01", 
-  logos: [
-  {src: 'https://docs.geostandaarden.nl/bro/gen/logo_bro.png',
-    href: "http://basisregistratieondergrond.nl",
-    alt: "Basisregistratie Ondergrond",
-    width: 252,
-    height: 130,
-    id: 'BRO'},
+  logos: [  
   {
     src: 'https://docs.geostandaarden.nl/bro/gen/logo_minbzk.png',
     href: "https://www.geobasisregistraties.nl/basisregistraties/ondergrond",
     alt: "Ministerie BZK",
-    width: 229,
-    height: 130,
-    id: 'BZK',
-  }]  ,
+    width: 776,
+    height: 163,
+    id: 'logo_minbzk',
+  }],
   editors: [],
   authors: [
     {
