@@ -1,324 +1,589 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema 
-        xmlns:brocom="http://www.broservices.nl/xsd/brocommon/3.0" 
-        xmlns:frdcom="http://www.broservices.nl/xsd/frdcommon/1.0" 
-        xmlns:gml="http://www.opengis.net/gml/3.2" 
-        xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0" 
-        xmlns:isfrd="http://www.broservices.nl/xsd/isfrd/1.0" 
-        xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-        targetNamespace="http://www.broservices.nl/xsd/isfrd/1.0" 
-        elementFormDefault="qualified" 
-        attributeFormDefault="unqualified" 
-        version="0.1.0">
-
-    <xs:annotation>
-        <xs:appinfo source="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd">
-            <gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
-        </xs:appinfo>
-    </xs:annotation>
-
-    <!--
-    <xs:import namespace="http://www.broservices.nl/xsd/frdcommon/1.0" schemaLocation="https://schema.broservices.nl/xsd/frdcommon/1.0/frdcommon.xsd"/>
-    -->
-    <xs:import namespace="http://www.broservices.nl/xsd/frdcommon/1.0" schemaLocation="frdcommon.xsd"/>
-    <xs:import namespace="http://www.broservices.nl/xsd/brocommon/3.0" schemaLocation="https://schema.broservices.nl/xsd/brocommon/3.0/brocommon.xsd"/>
-    <xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://schema.broservices.nl/profile/gml/1.0/gml-profile.xsd"/>
-
-    <xs:element name="intakeResponse" type="brocom:IntakeResponseType" />
-    <xs:element name="parseFault" type="brocom:ParseFaultType" />
-
-    <xs:element name="replaceRequest" type="isfrd:ReplaceRequestType">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het bericht replaceRequest (vervangverzoek) is een specialisatie van de abstract klasse CorrectionRequest uit de package brocommon, waaraan het een correctionReason en een sourceDocument toevoegt. Met dit bericht kan een bronhouder en/of dataleverancier in de BRO opgenomen gegevens vervangen (corrigeren). De eenheid van vervangen is een brondocument, dat eerder met een registrationRequest (registratieverzoek) is aangeboden bij de BRO. Het is niet mogelijk de waarde van een individueel attribuut te corrigeren.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="ReplaceRequestType">
-        <xs:complexContent>
-            <xs:extension base="brocom:CorrectionRequestType">
-                <xs:sequence>
-                    <xs:element name="correctionReason" type="isfrd:CorrectionReasonType" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:appinfo>
-                                <CodeListName>CorrectionReason</CodeListName>
-                                <CodeListURI>urn:bro:frd:CorrectionReason</CodeListURI>
-                            </xs:appinfo>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Reden waarom de geregistreerde gegevens worden vervangen.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="brondocument" type="isfrd:ReplaceableSourceDocumentType" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het element sourceDocument bevat gegevens die de in de BRO opgenomen gegevens zullen vervangen en die in de catalogus van het registratieobject zijn gespecificeerd, met uitzondering van de gegevens die door het BRO-systeem worden gegenereerd of afgeleid uit het innameverzoek.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-    <xs:element name="registrationRequest" type="isfrd:RegistrationRequestType">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het bericht RegistrationRequest is een specialisatie van de abstract klasse RegistrationRequest uit de package brocommon, waaraan het een sourceDocument toevoegt. Met dit bericht kan een nog niet geregistreerd formatieweerstandonderzoek in de BRO worden opgenomen of kan een geregistreerd formatieweerstandonderzoek aangevuld of voltooid worden.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="RegistrationRequestType">
-        <xs:complexContent>
-            <xs:extension base="brocom:RegistrationRequestType">
-                <xs:sequence>
-                    <xs:element name="sourceDocument" type="isfrd:SourceDocumentType" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition:   Het element sourceDocument bevat gegevens die in het BRO-systeem geregistreerd zullen worden en die in de catalogus van het registratieobject zijn gespecificeerd, met uitzondering van de gegevens die door het BRO-systeem worden gegenereerd of afgeleid uit het registratieverzoek.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-    <xs:element name="FRD_Addition_EMM" type="isfrd:FRD_Addition_EMMType" substitutionGroup="gml:AbstractFeature">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het brondocument wordt aangeboden wanneer nieuwe elektromagnetische metingen beschikbaar komen. De registratie is met dit brondocument aangevuld.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="FRD_Addition_EMMType">
-        <xs:complexContent>
-            <xs:extension base="gml:AbstractFeatureType">
-                <xs:sequence>
-                    <xs:element name="relatedFormationResistanceDetermination" type="frdcom:FormationResistanceDeterminationPropertyType" nillable="false" minOccurs="1" maxOccurs="1"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="FRD_Addition_EMMPropertyType">
-        <xs:sequence minOccurs="1">
-            <xs:element ref="isfrd:FRD_Addition_EMM"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:element name="FRD_Addition_GOKM" type="isfrd:FRD_Addition_GOKMType" substitutionGroup="gml:AbstractFeature">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het brondocument wordt aangeboden wanneer nieuwe geo-ohmkabel metingen beschikbaar komen. De registratie is met dit brondocument aangevuld.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="FRD_Addition_GOKMType">
-        <xs:complexContent>
-            <xs:extension base="gml:AbstractFeatureType">
-                <xs:sequence>
-                    <xs:element name="relatedFormationResistanceDetermination" type="frdcom:FormationResistanceDeterminationPropertyType" nillable="false" minOccurs="1" maxOccurs="1"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="FRD_Addition_GOKMPropertyType">
-        <xs:sequence minOccurs="1">
-            <xs:element ref="isfrd:FRD_Addition_GOKM"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:element name="FRD_Closure" type="isfrd:FRD_ClosureType" substitutionGroup="gml:AbstractFeature">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het brondocument wordt aangeboden wanneer een formatieweerstandonderzoek wordt afgesloten. De registratie is met dit brondocument voltooid en het registratieobject kan niet meer worden aangevuld.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="FRD_ClosureType">
-        <xs:complexContent>
-            <xs:extension base="gml:AbstractFeatureType"/>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="FRD_ClosurePropertyType">
-        <xs:sequence minOccurs="1">
-            <xs:element ref="isfrd:FRD_Closure"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:element name="FRD_Complete" type="isfrd:FRD_CompleteType" substitutionGroup="gml:AbstractFeature">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het brondocument wordt aangeboden wanneer een formatieweerstandonderzoek in zijn geheel in één keer wordt aangeleverd. De registratie is met dit brondocument voltooid en het registratieobject kan niet meer worden aangevuld.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="FRD_CompleteType">
-        <xs:complexContent>
-            <xs:extension base="gml:AbstractFeatureType">
-                <xs:sequence>
-                    <xs:element name="objectIdAccountableParty" type="xs:string" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De identificatie die door of voor de bronhouder is gebruikt om het object in de eigen administratie te kunnen vinden, voordat het was geregistreerd in de basisregistratie ondergrond.
-Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de bronhouder van het regfistratieobject. Het is in de registratie opgenomen om de communicatie tussen de registerbeheerder en de bronhouder of dataleverancier te vergemakkelijken.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="groundwaterMonitoringNet" type="frdcom:GroundwaterMonitoringNetPropertyType" nillable="false" minOccurs="1" maxOccurs="unbounded"/>
-                    <xs:element name="groundwaterMonitoringTube" type="frdcom:MonitoringTubePropertyType" nillable="false" minOccurs="1" maxOccurs="1"/>
-                    <xs:element name="relatedFormationResistanceDetermination" type="frdcom:FormationResistanceDeterminationPropertyType" nillable="false" minOccurs="1" maxOccurs="1"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="FRD_CompletePropertyType">
-        <xs:sequence minOccurs="1">
-            <xs:element ref="isfrd:FRD_Complete"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:element name="FRD_StartRegistration" type="isfrd:FRD_StartRegistrationType" substitutionGroup="gml:AbstractFeature">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het brondocument wordt aangeboden wanneer er een nieuw formatieweerstandonderzoek wordt gestart. Het FRD kan met of zonder bepalingen gestart worden. De registratie is met dit brondocument gestart.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="FRD_StartRegistrationType">
-        <xs:complexContent>
-            <xs:extension base="gml:AbstractFeatureType">
-                <xs:sequence>
-                    <xs:element name="objectIdAccountableParty" type="xs:string" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De identificatie die door of voor de bronhouder is gebruikt om het object in de eigen administratie te kunnen vinden, voordat het was geregistreerd in de basisregistratie ondergrond.
-Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de bronhouder van het regfistratieobject. Het is in de registratie opgenomen om de communicatie tussen de registerbeheerder en de bronhouder of dataleverancier te vergemakkelijken.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="groundwaterMonitoringNet" type="frdcom:GroundwaterMonitoringNetPropertyType" nillable="false" minOccurs="1" maxOccurs="unbounded"/>
-                    <xs:element name="groundwaterMonitoringTube" type="frdcom:MonitoringTubePropertyType" nillable="false" minOccurs="1" maxOccurs="1"/>
-                    <xs:element name="relatedFormationResistanceDetermination" type="frdcom:FormationResistanceDeterminationPropertyType" nillable="false" minOccurs="0" maxOccurs="1"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="FRD_StartRegistrationPropertyType">
-        <xs:sequence minOccurs="1">
-            <xs:element ref="isfrd:FRD_StartRegistration"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:element name="moveRequest" type="isfrd:MoveRequestType">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het bericht moveRequest (verplaatsverzoek) is een specialisatie van de abstract klasse CorrectionRequest uit de package brocommon, waaraan het een dateToBeCorrected, een correctionReason en een sourceDocument toevoegt. Met dit bericht kan een bronhouder en/of dataleverancier in de BRO opgenomen gegevens verplaatsen in de tijdlijn van het registratieobject. De eenheid van verplaatsen is een brondocument, dat eerder met een registrationRequest (registratieverzoek) is aangeboden bij de BRO. Het is niet mogelijk een individueel attribuut te verplaatsen.
+<xs:schema xmlns:brocom="http://www.broservices.nl/xsd/brocommon/3.0"
+           xmlns:frdcom="http://www.broservices.nl/xsd/frdcommon/1.0"
+           xmlns:gml="http://www.opengis.net/gml/3.2"
+           xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0"
+           xmlns:imvert="http://www.imvertor.org/schema/system"
+           xmlns:isfrd="http://www.broservices.nl/xsd/isfrd/1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.broservices.nl/xsd/isfrd/1.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0.0-1">
+   <xs:annotation>
+      <xs:appinfo source="http://www.imvertor.org/model-info/project">Logical model</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/application">Formatieweerstand onderzoek (FRD) logisch</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/release">20211007</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/version">1.0.0</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/phase">1</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/uri">http://www.broservices.nl/xsd/isfrd</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/generated">2021-10-08T12:05:07Z</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/xml-schema-info/file-location">Formatieweerstand onderzoek (FRD) logisch/unknown/v20211007/Isfrd.xsd</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/xml-schema-info/generated">October 8, 2021 at 12:05:07</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/xml-schema-info/generator">1.65.2</xs:appinfo>
+      <xs:documentation source="http://www.imvertor.org/schema-info/conversion">
+        This schema is based on an UML specification, which is transformed by the Imvertor software. Imvertor modules are in the public domain, see http://www.imvertor.org.
+    </xs:documentation>
+   </xs:annotation>
+   <xs:annotation>
+      <xs:appinfo source="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd">
+         <gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:import namespace="http://www.broservices.nl/xsd/frdcommon/1.0"
+              schemaLocation="https://schema.broservices.nl/xsd/frdcommon/1.0/frdcommon.xsd"/>
+   <xs:import namespace="http://www.broservices.nl/xsd/brocommon/3.0"
+              schemaLocation="https://schema.broservices.nl/xsd/brocommon/3.0/brocommon.xsd"/>
+   <xs:import namespace="http://www.opengis.net/gml/3.2"
+              schemaLocation="https://schema.broservices.nl/profile/gml/1.0/gml-profile.xsd"/>
+   <xs:element name="RegistrationRequest"
+               type="isfrd:RegistrationRequestType"
+               substitutionGroup="brocom:RegistrationRequest">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het bericht RegistrationRequest is een specialisatie van de abstract klasse RegistrationRequest uit de package brocommon, waaraan het een sourceDocument toevoegt. Met dit bericht kan een nog niet geregistreerd formatieweerstandonderzoek in de BRO worden opgenomen of kan een geregistreerd formatieweerstandonderzoek aangevuld of voltooid worden.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="RegistrationRequestType">
+      <xs:complexContent>
+         <xs:extension base="brocom:RegistrationRequestType">
+            <xs:sequence>
+               <xs:element name="sourceDocument"
+                           type="isfrd:SourceDocumentPropertyType"
+                           minOccurs="1"
+                           maxOccurs="1">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition:   Het element sourceDocument bevat gegevens die in het BRO-systeem geregistreerd zullen worden en die in de catalogus van het registratieobject zijn gespecificeerd, met uitzondering van de gegevens die door het BRO-systeem worden gegenereerd of afgeleid uit het registratieverzoek.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="RegistrationRequestPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:RegistrationRequest"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:element name="ReplaceRequest"
+               type="isfrd:ReplaceRequestType"
+               substitutionGroup="brocom:CorrectionRequest">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het bericht replaceRequest (vervangverzoek) is een specialisatie van de abstract klasse CorrectionRequest uit de package brocommon, waaraan het een correctionReason en een sourceDocument toevoegt. Met dit bericht kan een bronhouder en/of dataleverancier in de BRO opgenomen gegevens vervangen (corrigeren). De eenheid van vervangen is een brondocument, dat eerder met een registrationRequest (registratieverzoek) is aangeboden bij de BRO. Het is niet mogelijk de waarde van een individueel attribuut te corrigeren.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="ReplaceRequestType">
+      <xs:complexContent>
+         <xs:extension base="brocom:CorrectionRequestType">
+            <xs:sequence>
+               <xs:element name="correctionReason"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="isfrd:CorrectionReasonType">
+                  <xs:annotation>
+                     <xs:appinfo>
+                        <CodeListName>CorrectionReason</CodeListName>
+                        <CodeListURI>urn:bro:frd:CorrectionReason</CodeListURI>
+                     </xs:appinfo>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Reden waarom de geregistreerde gegevens worden vervangen.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="brondocument"
+                           type="isfrd:ReplaceableSourceDocumentPropertyType"
+                           minOccurs="1"
+                           maxOccurs="1">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het element sourceDocument bevat gegevens die de in de BRO opgenomen gegevens zullen vervangen en die in de catalogus van het registratieobject zijn gespecificeerd, met uitzondering van de gegevens die door het BRO-systeem worden gegenereerd of afgeleid uit het innameverzoek.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ReplaceRequestPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:ReplaceRequest"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:element name="InsertRequest"
+               type="isfrd:InsertRequestType"
+               substitutionGroup="brocom:CorrectionRequest">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het bericht insertRequest (invoegverzoek) is een specialisatie van de abstract klasse CorrectionRequest uit de package brocommon, waaraan het een correctionReason en een sourceDocument toevoegt. Met dit bericht kan een bronhouder en/of dataleverancier een ontbrekende aanvulling invoegen in de tijdlijn van het registratieobject. De eenheid van invoegen is een brondocument. Het is niet mogelijk een individueel attribuut in te voegen.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="InsertRequestType">
+      <xs:complexContent>
+         <xs:extension base="brocom:CorrectionRequestType">
+            <xs:sequence>
+               <xs:element name="correctionReason"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="isfrd:CorrectionReasonType">
+                  <xs:annotation>
+                     <xs:appinfo>
+                        <CodeListName>CorrectionReason</CodeListName>
+                        <CodeListURI>urn:bro:frd:CorrectionReason</CodeListURI>
+                     </xs:appinfo>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Reden waarom de aangeboden gegevens worden ingevoegd in de tijdlijn van het registratieobject.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="sourceDocument"
+                           type="isfrd:InsertableSourceDocumentPropertyType"
+                           minOccurs="1"
+                           maxOccurs="1">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het element sourceDocument bevat gegevens die zullen worden ingevoegd in de tijdlijn van in de BRO opgenomen gegevens van het registratieobject, met uitzondering van de gegevens die door het BRO-systeem worden gegenereerd of afgeleid uit het innameverzoek.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="InsertRequestPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:InsertRequest"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:element name="MoveRequest"
+               type="isfrd:MoveRequestType"
+               substitutionGroup="brocom:CorrectionRequest">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het bericht moveRequest (verplaatsverzoek) is een specialisatie van de abstract klasse CorrectionRequest uit de package brocommon, waaraan het een dateToBeCorrected, een correctionReason en een sourceDocument toevoegt. Met dit bericht kan een bronhouder en/of dataleverancier in de BRO opgenomen gegevens verplaatsen in de tijdlijn van het registratieobject. De eenheid van verplaatsen is een brondocument, dat eerder met een registrationRequest (registratieverzoek) is aangeboden bij de BRO. Het is niet mogelijk een individueel attribuut te verplaatsen.
 Explanation: Met een moveRequest kan een situatie, waarbij een gebeurtenis is geregistreerd met een foute waarde voor de datum waarop de gebeurtenis heeft plaatsgevonden, verplaatst worden in de tijd.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="MoveRequestType">
-        <xs:complexContent>
-            <xs:extension base="brocom:CorrectionRequestType">
-                <xs:sequence>
-                    <xs:element name="dateToBeCorrected" type="xs:date" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De datum van de oorspronkelijk geregistreerde (elektromagnetische of geo-ohmkabel) meetmethode die moet worden verplaatst in de tijdlijn.
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="MoveRequestType">
+      <xs:complexContent>
+         <xs:extension base="brocom:CorrectionRequestType">
+            <xs:sequence>
+               <xs:element name="dateToBeCorrected"
+                           type="xs:date"
+                           minOccurs="1"
+                           maxOccurs="1">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De datum van de oorspronkelijk geregistreerde (elektromagnetische of geo-ohmkabel) meetmethode die moet worden verplaatst in de tijdlijn.
 Explanation: De juiste datum is opgenomen in het sourceDocument.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="correctionReason" type="isfrd:CorrectionReasonType" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:appinfo>
-                                <CodeListName>CorrectionReason</CodeListName>
-                                <CodeListURI>urn:bro:frd:CorrectionReason</CodeListURI>
-                            </xs:appinfo>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Reden waarom de geregistreerde gevens moeten worden verplaatst in de tijd.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="sourceDocument" type="isfrd:MoveableSourceDocumentType" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het element sourceDocument bevat de gegevens van de in de BRO opgenomen gegevens die moeten worden verplaatst in de tijdijn van het registratieobject met daarin de juiste datum, met uitzondering van de gegevens die door het BRO-systeem worden gegenereerd of afgeleid uit het innameverzoek.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-    <xs:element name="insertRequest" type="isfrd:InsertRequestType">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het bericht insertRequest (invoegverzoek) is een specialisatie van de abstract klasse CorrectionRequest uit de package brocommon, waaraan het een correctionReason en een sourceDocument toevoegt. Met dit bericht kan een bronhouder en/of dataleverancier een ontbrekende aanvulling invoegen in de tijdlijn van het registratieobject. De eenheid van invoegen is een brondocument. Het is niet mogelijk een individueel attribuut in te voegen.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="InsertRequestType">
-        <xs:complexContent>
-            <xs:extension base="brocom:CorrectionRequestType">
-                <xs:sequence>
-                    <xs:element name="correctionReason" type="isfrd:CorrectionReasonType" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:appinfo>
-                                <CodeListName>CorrectionReason</CodeListName>
-                                <CodeListURI>urn:bro:frd:CorrectionReason</CodeListURI>
-                            </xs:appinfo>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Reden waarom de aangeboden gegevens worden ingevoegd in de tijdlijn van het registratieobject.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="sourceDocument" type="isfrd:InsertableSourceDocumentType" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het element sourceDocument bevat gegevens die zullen worden ingevoegd in de tijdlijn van in de BRO opgenomen gegevens van het registratieobject, met uitzondering van de gegevens die door het BRO-systeem worden gegenereerd of afgeleid uit het innameverzoek.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-    <xs:element name="deleteRequest" type="isfrd:DeleteRequestType">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het bericht replaceRequest (vervangverzoek) is een specialisatie van de abstract klasse CorrectionRequest uit de package brocommon, waaraan het een sourceDocument toevoegt. Met dit bericht kan een bronhouder en/of dataleverancier in de BRO opgenomen gegevens verwijderen. De eenheid van verwijderen is een brondocument, dat eerder met een registrationRequest (registratieverzoek) is aangeboden bij de BRO. Het is niet mogelijk een individueel attribuut te verwijderen.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="DeleteRequestType">
-        <xs:complexContent>
-            <xs:extension base="brocom:CorrectionRequestType">
-                <xs:sequence>
-                    <xs:element name="correctionReason" type="isfrd:CorrectionReasonType" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:appinfo>
-                                <CodeListName>CorrectionReason</CodeListName>
-                                <CodeListURI>urn:bro:frd:CorrectionReason</CodeListURI>
-                            </xs:appinfo>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Reden waarom de geregistreerde gegevens worden verwijderd.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="sourceDocument" type="isfrd:DeleteableSourceDocumentType" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het element sourceDocument bevat gegevens die uit het BRO-systeem verwijderd zullen worden en die in de catalogus van het registratieobject zijn gespecificeerd, met uitzondering van de gegevens die door het BRO-systeem worden gegenereerd of afgeleid uit het innameverzoek.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-    <xs:complexType name="CorrectionReasonType">
-        <xs:simpleContent>
-            <xs:restriction base="gml:CodeWithAuthorityType">
-                <xs:attribute name="codeSpace" type="xs:anyURI" use="required" fixed="urn:bro:frd:CorrectionReason"/>
-            </xs:restriction>
-        </xs:simpleContent>
-    </xs:complexType>
-
-    <xs:complexType name="DeleteableSourceDocumentType">
-        <xs:choice minOccurs="1" maxOccurs="1">
-            <xs:element ref="isfrd:FRD_Addition_EMM"/>
-            <xs:element ref="isfrd:FRD_Addition_GOKM"/>
-            <xs:element ref="isfrd:FRD_Closure"/>
-        </xs:choice>
-    </xs:complexType>
-    <xs:complexType name="InsertableSourceDocumentType">
-        <xs:choice minOccurs="1" maxOccurs="1">
-            <xs:element ref="isfrd:FRD_Addition_EMM"/>
-            <xs:element ref="isfrd:FRD_Addition_GOKM"/>
-        </xs:choice>
-    </xs:complexType>
-    <xs:complexType name="MoveableSourceDocumentType">
-        <xs:choice minOccurs="1" maxOccurs="1">
-            <xs:element ref="isfrd:FRD_Addition_EMM"/>
-            <xs:element ref="isfrd:FRD_Addition_GOKM"/>
-        </xs:choice>
-    </xs:complexType>
-    <xs:complexType name="ReplaceableSourceDocumentType">
-        <xs:choice minOccurs="1" maxOccurs="1">
-            <xs:element ref="isfrd:FRD_StartRegistration"/>
-            <xs:element ref="isfrd:FRD_Addition_EMM"/>
-            <xs:element ref="isfrd:FRD_Addition_GOKM"/>
-            <xs:element ref="isfrd:FRD_Complete"/>
-        </xs:choice>
-    </xs:complexType>
-    <xs:complexType name="SourceDocumentType">
-        <xs:choice minOccurs="1" maxOccurs="1">
-            <xs:element ref="isfrd:FRD_StartRegistration"/>
-            <xs:element ref="isfrd:FRD_Addition_EMM"/>
-            <xs:element ref="isfrd:FRD_Addition_GOKM"/>
-            <xs:element ref="isfrd:FRD_Closure"/>
-            <xs:element ref="isfrd:FRD_Complete"/>
-        </xs:choice>
-    </xs:complexType>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="correctionReason"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="isfrd:CorrectionReasonType">
+                  <xs:annotation>
+                     <xs:appinfo>
+                        <CodeListName>CorrectionReason</CodeListName>
+                        <CodeListURI>urn:bro:frd:CorrectionReason</CodeListURI>
+                     </xs:appinfo>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Reden waarom de geregistreerde gevens moeten worden verplaatst in de tijd.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="sourceDocument"
+                           type="isfrd:MoveableSourceDocumentPropertyType"
+                           minOccurs="1"
+                           maxOccurs="1">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het element sourceDocument bevat de gegevens van de in de BRO opgenomen gegevens die moeten worden verplaatst in de tijdijn van het registratieobject met daarin de juiste datum, met uitzondering van de gegevens die door het BRO-systeem worden gegenereerd of afgeleid uit het innameverzoek.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="MoveRequestPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:MoveRequest"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:element name="DeleteRequest"
+               type="isfrd:DeleteRequestType"
+               substitutionGroup="brocom:CorrectionRequest">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het bericht replaceRequest (vervangverzoek) is een specialisatie van de abstract klasse CorrectionRequest uit de package brocommon, waaraan het een sourceDocument toevoegt. Met dit bericht kan een bronhouder en/of dataleverancier in de BRO opgenomen gegevens verwijderen. De eenheid van verwijderen is een brondocument, dat eerder met een registrationRequest (registratieverzoek) is aangeboden bij de BRO. Het is niet mogelijk een individueel attribuut te verwijderen.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="DeleteRequestType">
+      <xs:complexContent>
+         <xs:extension base="brocom:CorrectionRequestType">
+            <xs:sequence>
+               <xs:element name="correctionReason"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="isfrd:CorrectionReasonType">
+                  <xs:annotation>
+                     <xs:appinfo>
+                        <CodeListName>CorrectionReason</CodeListName>
+                        <CodeListURI>urn:bro:frd:CorrectionReason</CodeListURI>
+                     </xs:appinfo>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Reden waarom de geregistreerde gegevens worden verwijderd.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="sourceDocument"
+                           type="isfrd:DeleteableSourceDocumentPropertyType"
+                           minOccurs="1"
+                           maxOccurs="1">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het element sourceDocument bevat gegevens die uit het BRO-systeem verwijderd zullen worden en die in de catalogus van het registratieobject zijn gespecificeerd, met uitzondering van de gegevens die door het BRO-systeem worden gegenereerd of afgeleid uit het innameverzoek.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="DeleteRequestPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:DeleteRequest"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:element name="FRD_Addition_EMM"
+               type="isfrd:FRD_Addition_EMMType"
+               substitutionGroup="gml:AbstractFeature">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het brondocument wordt aangeboden wanneer nieuwe elektromagnetische metingen beschikbaar komen. De registratie is met dit brondocument aangevuld.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="FRD_Addition_EMMType">
+      <xs:complexContent>
+         <xs:extension base="gml:AbstractFeatureType">
+            <xs:sequence>
+               <xs:element minOccurs="1"
+                           maxOccurs="1"
+                           name="relatedFormationResistanceDetermination"
+                           nillable="false"
+                           type="frdcom:ElectromagneticMeasurementPropertyType"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="FRD_Addition_EMMPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:FRD_Addition_EMM"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:element name="FRD_Addition_GOKM"
+               type="isfrd:FRD_Addition_GOKMType"
+               substitutionGroup="gml:AbstractFeature">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het brondocument wordt aangeboden wanneer nieuwe geo-ohmkabel metingen beschikbaar komen. De registratie is met dit brondocument aangevuld.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="FRD_Addition_GOKMType">
+      <xs:complexContent>
+         <xs:extension base="gml:AbstractFeatureType">
+            <xs:sequence>
+               <xs:element minOccurs="1"
+                           maxOccurs="1"
+                           name="relatedFormationResistanceDetermination"
+                           nillable="false"
+                           type="frdcom:GeoElectricMeasurementPropertyType"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="FRD_Addition_GOKMPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:FRD_Addition_GOKM"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:element name="FRD_Closure"
+               type="isfrd:FRD_ClosureType"
+               substitutionGroup="gml:AbstractFeature">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het brondocument wordt aangeboden wanneer een formatieweerstandonderzoek wordt afgesloten. De registratie is met dit brondocument voltooid en het registratieobject kan niet meer worden aangevuld.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="FRD_ClosureType">
+      <xs:complexContent>
+         <xs:extension base="gml:AbstractFeatureType"/>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="FRD_ClosurePropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:FRD_Closure"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:element name="FRD_Complete"
+               type="isfrd:FRD_CompleteType"
+               substitutionGroup="gml:AbstractFeature">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het brondocument wordt aangeboden wanneer een formatieweerstandonderzoek in zijn geheel in één keer wordt aangeleverd. De registratie is met dit brondocument voltooid en het registratieobject kan niet meer worden aangevuld.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="FRD_CompleteType">
+      <xs:complexContent>
+         <xs:extension base="gml:AbstractFeatureType">
+            <xs:sequence>
+               <xs:element name="objectIdAccountableParty"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De identificatie die door of voor de bronhouder is gebruikt om het object in de eigen administratie te kunnen vinden, voordat het was geregistreerd in de basisregistratie ondergrond.
+Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de bronhouder van het regfistratieobject. Het is in de registratie opgenomen om de communicatie tussen de registerbeheerder en de bronhouder of dataleverancier te vergemakkelijken.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element minOccurs="0"
+                           maxOccurs="unbounded"
+                           name="measurementConfiguration"
+                           nillable="false"
+                           type="frdcom:MeasurementConfigurationPropertyType"/>
+               <xs:element minOccurs="0"
+                           maxOccurs="unbounded"
+                           name="relatedGeoElectricMeasurement"
+                           nillable="false"
+                           type="frdcom:GeoElectricMeasurementPropertyType"/>
+               <xs:element minOccurs="1"
+                           maxOccurs="1"
+                           name="groundwaterMonitoringTube"
+                           nillable="false"
+                           type="frdcom:MonitoringTubePropertyType"/>
+               <xs:element minOccurs="0"
+                           maxOccurs="unbounded"
+                           name="instrumentConfiguration"
+                           nillable="false"
+                           type="frdcom:InstrumentConfigurationPropertyType"/>
+               <xs:element minOccurs="1"
+                           maxOccurs="unbounded"
+                           name="groundwaterMonitoringNet"
+                           nillable="false"
+                           type="frdcom:GroundwaterMonitoringNetPropertyType"/>
+               <xs:element minOccurs="0"
+                           maxOccurs="unbounded"
+                           name="relatedElectromagneticMeasurement"
+                           nillable="false"
+                           type="frdcom:ElectromagneticMeasurementPropertyType"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="FRD_CompletePropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:FRD_Complete"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:element name="FRD_EMM_InstrumentConfiguration"
+               type="isfrd:FRD_EMM_InstrumentConfigurationType"
+               substitutionGroup="gml:AbstractFeature">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het brondocument wordt aangeboden wanneer een nieuwe instrumentconfiguratie beschikbaar komt voor elektromagnetische metingen. De registratie is met dit brondocument aangevuld.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="FRD_EMM_InstrumentConfigurationType">
+      <xs:complexContent>
+         <xs:extension base="gml:AbstractFeatureType">
+            <xs:sequence>
+               <xs:element minOccurs="1"
+                           maxOccurs="1"
+                           name="instrumentConfiguration"
+                           nillable="false"
+                           type="frdcom:InstrumentConfigurationPropertyType"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="FRD_EMM_InstrumentConfigurationPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:FRD_EMM_InstrumentConfiguration"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:element name="FRD_GEM_MeasurementConfiguration"
+               type="isfrd:FRD_GEM_MeasurementConfigurationType"
+               substitutionGroup="gml:AbstractFeature">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het brondocument wordt aangeboden wanneer een nieuwe meetconfiguratie beschikbaar komt voor geo-ohmkabel metingen. De registratie is met dit brondocument aangevuld.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="FRD_GEM_MeasurementConfigurationType">
+      <xs:complexContent>
+         <xs:extension base="gml:AbstractFeatureType">
+            <xs:sequence>
+               <xs:element minOccurs="1"
+                           maxOccurs="unbounded"
+                           name="measurementConfiguration"
+                           nillable="false"
+                           type="frdcom:MeasurementConfigurationPropertyType"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="FRD_GEM_MeasurementConfigurationPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:FRD_GEM_MeasurementConfiguration"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:element name="FRD_StartRegistration"
+               type="isfrd:FRD_StartRegistrationType"
+               substitutionGroup="gml:AbstractFeature">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het brondocument wordt aangeboden wanneer er een nieuw formatieweerstandonderzoek wordt gestart. Het FRD kan met of zonder bepalingen gestart worden. De registratie is met dit brondocument gestart.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="FRD_StartRegistrationType">
+      <xs:complexContent>
+         <xs:extension base="gml:AbstractFeatureType">
+            <xs:sequence>
+               <xs:element name="objectIdAccountableParty"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="xs:string">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De identificatie die door of voor de bronhouder is gebruikt om het object in de eigen administratie te kunnen vinden, voordat het was geregistreerd in de basisregistratie ondergrond.
+Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de bronhouder van het regfistratieobject. Het is in de registratie opgenomen om de communicatie tussen de registerbeheerder en de bronhouder of dataleverancier te vergemakkelijken.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element minOccurs="1"
+                           maxOccurs="unbounded"
+                           name="groundwaterMonitoringNet"
+                           nillable="false"
+                           type="frdcom:GroundwaterMonitoringNetPropertyType"/>
+               <xs:element minOccurs="1"
+                           maxOccurs="1"
+                           name="groundwaterMonitoringTube"
+                           nillable="false"
+                           type="frdcom:MonitoringTubePropertyType"/>
+               <xs:element minOccurs="0"
+                           maxOccurs="unbounded"
+                           name="relatedElectromagneticMeasurement"
+                           nillable="false"
+                           type="frdcom:ElectromagneticMeasurementPropertyType"/>
+               <xs:element minOccurs="0"
+                           maxOccurs="unbounded"
+                           name="relatedGeoElectricMeasurement"
+                           nillable="false"
+                           type="frdcom:GeoElectricMeasurementPropertyType"/>
+               <xs:element minOccurs="0"
+                           maxOccurs="unbounded"
+                           name="instrumentConfiguration"
+                           nillable="false"
+                           type="frdcom:InstrumentConfigurationPropertyType"/>
+               <xs:element minOccurs="0"
+                           maxOccurs="unbounded"
+                           name="measurementConfiguration"
+                           nillable="false"
+                           type="frdcom:MeasurementConfigurationPropertyType"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="FRD_StartRegistrationPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:FRD_StartRegistration"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:complexType name="CorrectionReasonType">
+      <xs:simpleContent>
+         <xs:restriction base="gml:CodeWithAuthorityType">
+            <xs:attribute name="codeSpace"
+                          type="xs:anyURI"
+                          use="required"
+                          fixed="urn:bro:frd:CorrectionReason"/>
+         </xs:restriction>
+      </xs:simpleContent>
+   </xs:complexType>
+   <xs:element name="DeleteableSourceDocument"
+               type="isfrd:DeleteableSourceDocumentType">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het datatype DeleteableSourceDocument biedt de keuze uit een aantal verschillende types brondocumenten, waarvan er één opgenomen is in een deleteRequest (verwijderverzoek).</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="DeleteableSourceDocumentType">
+      <xs:choice minOccurs="1" maxOccurs="1">
+         <xs:element ref="isfrd:FRD_EMM_InstrumentConfiguration"/>
+         <xs:element ref="isfrd:FRD_GEM_MeasurementConfiguration"/>
+         <xs:element ref="isfrd:FRD_Addition_EMM"/>
+         <xs:element ref="isfrd:FRD_Addition_GOKM"/>
+         <xs:element ref="isfrd:FRD_Closure"/>
+      </xs:choice>
+   </xs:complexType>
+   <xs:complexType name="DeleteableSourceDocumentPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:DeleteableSourceDocument"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="InsertableSourceDocument"
+               type="isfrd:InsertableSourceDocumentType">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het datatype InsertableSourceDocument biedt de keuze uit een aantal verschillende types brondocumenten, waarvan er één opgenomen is in een insertRequest (invoegverzoek).</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="InsertableSourceDocumentType">
+      <xs:choice minOccurs="1" maxOccurs="1">
+         <xs:element ref="isfrd:FRD_Addition_EMM"/>
+         <xs:element ref="isfrd:FRD_Addition_GOKM"/>
+      </xs:choice>
+   </xs:complexType>
+   <xs:complexType name="InsertableSourceDocumentPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:InsertableSourceDocument"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="MoveableSourceDocument" type="isfrd:MoveableSourceDocumentType">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het datatype MoveableSourceDocument biedt de keuze uit een aantal verschillende types brondocumenten, waarvan er één opgenomen is in een moveRequest (verplaatsverzoek).</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="MoveableSourceDocumentType">
+      <xs:choice minOccurs="1" maxOccurs="1">
+         <xs:element ref="isfrd:FRD_Addition_EMM"/>
+         <xs:element ref="isfrd:FRD_Addition_GOKM"/>
+      </xs:choice>
+   </xs:complexType>
+   <xs:complexType name="MoveableSourceDocumentPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:MoveableSourceDocument"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="ReplaceableSourceDocument"
+               type="isfrd:ReplaceableSourceDocumentType">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het datatype ReplaceableSourceDocument biedt de keuze uit een aantal verschillende types brondocumenten, waarvan er één opgenomen is in een replaceRequest (vervangverzoek).</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="ReplaceableSourceDocumentType">
+      <xs:choice minOccurs="1" maxOccurs="1">
+         <xs:element ref="isfrd:FRD_StartRegistration"/>
+         <xs:element ref="isfrd:FRD_EMM_InstrumentConfiguration"/>
+         <xs:element ref="isfrd:FRD_GEM_MeasurementConfiguration"/>
+         <xs:element ref="isfrd:FRD_Addition_EMM"/>
+         <xs:element ref="isfrd:FRD_Addition_GOKM"/>
+         <xs:element ref="isfrd:FRD_Complete"/>
+      </xs:choice>
+   </xs:complexType>
+   <xs:complexType name="ReplaceableSourceDocumentPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:ReplaceableSourceDocument"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="SourceDocument" type="isfrd:SourceDocumentType">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het datatype SourceDocument biedt de keuze uit een aantal verschillende typen brondocumenten, waarvan er één opgenomen is in een innameverzoek.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="SourceDocumentType">
+      <xs:choice minOccurs="1" maxOccurs="1">
+         <xs:element ref="isfrd:FRD_StartRegistration"/>
+         <xs:element ref="isfrd:FRD_Addition_EMM"/>
+         <xs:element ref="isfrd:FRD_Addition_GOKM"/>
+         <xs:element ref="isfrd:FRD_Closure"/>
+         <xs:element ref="isfrd:FRD_Complete"/>
+         <xs:element ref="isfrd:FRD_EMM_InstrumentConfiguration"/>
+         <xs:element ref="isfrd:FRD_GEM_MeasurementConfiguration"/>
+      </xs:choice>
+   </xs:complexType>
+   <xs:complexType name="SourceDocumentPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="isfrd:SourceDocument"/>
+      </xs:sequence>
+   </xs:complexType>
 </xs:schema>

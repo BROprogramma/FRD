@@ -1,107 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema 
-        xmlns:brocom="http://www.broservices.nl/xsd/brocommon/3.0" 
-        xmlns:dsfrd="http://www.broservices.nl/xsd/dsfrd/1.0" 
-        xmlns:frdcom="http://www.broservices.nl/xsd/frdcommon/1.0" 
-        xmlns:gml="http://www.opengis.net/gml/3.2" 
-        xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0" 
-        xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-        targetNamespace="http://www.broservices.nl/xsd/dsfrd/1.0" 
-        elementFormDefault="qualified" 
-        attributeFormDefault="unqualified" 
-        version="0.1.0">
-
-    <xs:annotation>
-        <xs:appinfo source="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd">
-            <gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
-        </xs:appinfo>
-    </xs:annotation>
-
-    <!--
-    <xs:import namespace="http://www.broservices.nl/xsd/brocommon/3.0" schemaLocation="https://schema.broservices.nl/xsd/brocommon/3.0/brocommon.xsd"/>
-    <xs:import namespace="http://www.broservices.nl/xsd/frdcommon/1.0" schemaLocation="https://schema.broservices.nl/xsd/frdcommon/1.0/frdcommon.xsd"/>
-    <xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://schema.broservices.nl/profile/gml/1.0/gml-profile.xsd"/>
-    -->
-
-    <xs:import namespace="http://www.broservices.nl/xsd/brocommon/3.0" schemaLocation="https://schema.broservices.nl/xsd/brocommon/3.0/brocommon.xsd"/>
-    <xs:import namespace="http://www.broservices.nl/xsd/frdcommon/1.0" schemaLocation="./frdcommon.xsd"/>
-    <xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://schema.broservices.nl/profile/gml/1.0/gml-profile.xsd"/>
-
-    <xs:element name="dispatchDataRequest" type="brocom:DispatchDataRequestType" />
-    <xs:element name="parseFault" type="brocom:ParseFaultType" />
-
-    <xs:element name="FRD_O_DP" type="dsfrd:FRD_O_DPType" substitutionGroup="brocom:RegistrationObject">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het uitgiftedocument dat wordt uitgeleverd als de afnemer tevens de bronhouder of dataleverancier is van het registratieobject.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="FRD_O_DPType">
-        <xs:complexContent>
-            <xs:extension base="brocom:RegistrationObjectType">
-                <xs:sequence>
-                    <xs:element name="researchFirstDate" type="xs:date" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De datum waarop de eerste meting van het formatieweerstandonderzoek is uitgevoerd.
+<xs:schema xmlns:brocom="http://www.broservices.nl/xsd/brocommon/3.0"
+           xmlns:dsfrd="http://www.broservices.nl/xsd/dsfrd/1.0"
+           xmlns:frdcom="http://www.broservices.nl/xsd/frdcommon/1.0"
+           xmlns:gml="http://www.opengis.net/gml/3.2"
+           xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0"
+           xmlns:imvert="http://www.imvertor.org/schema/system"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.broservices.nl/xsd/dsfrd/1.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0.0-1">
+   <xs:annotation>
+      <xs:appinfo source="http://www.imvertor.org/model-info/project">Logical model</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/application">Formatieweerstand onderzoek (FRD) logisch</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/release">20211007</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/version">1.0.0</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/phase">1</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/uri">http://www.broservices.nl/xsd/dsfrd</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/model-info/generated">2021-10-08T12:05:07Z</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/xml-schema-info/file-location">Formatieweerstand onderzoek (FRD) logisch/unknown/v20211007/Dsfrd.xsd</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/xml-schema-info/generated">October 8, 2021 at 12:05:07</xs:appinfo>
+      <xs:appinfo source="http://www.imvertor.org/xml-schema-info/generator">1.65.2</xs:appinfo>
+      <xs:documentation source="http://www.imvertor.org/schema-info/conversion">
+        This schema is based on an UML specification, which is transformed by the Imvertor software. Imvertor modules are in the public domain, see http://www.imvertor.org.
+    </xs:documentation>
+   </xs:annotation>
+   <xs:annotation>
+      <xs:appinfo source="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd">
+         <gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:import namespace="http://www.broservices.nl/xsd/brocommon/3.0"
+              schemaLocation="https://schema.broservices.nl/xsd/brocommon/3.0/brocommon.xsd"/>
+   <xs:import namespace="http://www.broservices.nl/xsd/frdcommon/1.0"
+              schemaLocation="https://schema.broservices.nl/xsd/frdcommon/1.0/frdcommon.xsd"/>
+   <xs:import namespace="http://www.opengis.net/gml/3.2"
+              schemaLocation="https://schema.broservices.nl/profile/gml/1.0/gml-profile.xsd"/>
+   <xs:element name="FRD_O_DP"
+               type="dsfrd:FRD_O_DPType"
+               substitutionGroup="brocom:RegistrationObject">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het uitgiftedocument dat wordt uitgeleverd als de afnemer tevens de bronhouder of dataleverancier is van het registratieobject.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="FRD_O_DPType">
+      <xs:complexContent>
+         <xs:extension base="brocom:RegistrationObjectType">
+            <xs:sequence>
+               <xs:element name="researchFirstDate"
+                           type="xs:date"
+                           minOccurs="0"
+                           maxOccurs="1">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De datum waarop de eerste meting van het formatieweerstandonderzoek is uitgevoerd.
 Explanation: Het gegeven staat niet in een brondocument, maar wordt automatisch door de basisregistratie ondergrond afgeleid van de oudste datum meting van de entiteit Elektromagnetische meting of Geo-ohmkabel meting</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="researchLastDate" type="xs:date" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De datum van de recentste meting die beschikbaar is van het formatieweerstandonderzoek.
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="researchLastDate"
+                           type="xs:date"
+                           minOccurs="0"
+                           maxOccurs="1">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De datum van de recentste meting die beschikbaar is van het formatieweerstandonderzoek.
 Explanation: Het gegeven staat niet in een brondocument, maar wordt automatisch door de basisregistratie ondergrond afgeleid uit recentste datum meting van de entiteit Elektromagnetische meting of Geo-ohmkabel meting</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="registrationHistory" type="brocom:RegistrationHistoryType" nillable="false" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De gegevens die de geschiedenis van het object in de registratie ondergrond markeren.
+                  </xs:annotation>
+               </xs:element>
+               <xs:element minOccurs="1"
+                           maxOccurs="1"
+                           name="registrationHistory"
+                           nillable="false"
+                           type="brocom:RegistrationHistoryType">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De gegevens die de geschiedenis van het object in de registratie ondergrond markeren.
 Explanation: De gegevens staan niet in een brondocument, maar worden automatisch door de basisregistratie ondergrond gegenereerd.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="groundwaterMonitoringNet" type="frdcom:GroundwaterMonitoringNetPropertyType" nillable="false" minOccurs="1" maxOccurs="unbounded"/>
-                    <xs:element name="groundwaterMonitoringTube" type="frdcom:MonitoringTubePropertyType" nillable="false" minOccurs="1" maxOccurs="1"/>
-                    <xs:element name="relatedFormationResistanceDetermination" type="frdcom:FormationResistanceDeterminationPropertyType" nillable="false" minOccurs="0" maxOccurs="1"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="FRD_O_DPPropertyType">
-        <xs:sequence minOccurs="1">
-            <xs:element ref="dsfrd:FRD_O_DP"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:element name="FRD_O" type="dsfrd:FRD_OType" substitutionGroup="dsfrd:FRD_O_DP">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het uitgiftedocument dat wordt uitgeleverd als de afnemer niet de bronhouder of dataleverancier is van het registratieobject en het registratieobject niet uit registratie is genomen.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="FRD_OType">
-        <xs:complexContent>
-            <xs:extension base="dsfrd:FRD_O_DPType"/>
-        </xs:complexContent>
-    </xs:complexType>
-    <xs:complexType name="FRD_OPropertyType">
-        <xs:sequence minOccurs="1">
-            <xs:element ref="dsfrd:FRD_O"/>
-        </xs:sequence>
-    </xs:complexType>
-    
-    <xs:element name="dispatchDataResponse" type="dsfrd:DispatchDataResponseType">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het bericht DispatchDataResponse is een specialisatie van de abstract klasse DispatchDataResponse uit de package brocommon, waaraan het een dispatchDocument toevoegt. Met dit bericht worden, als response op een DispatchDataRequest, de gegevens over een specifiek formatieweerstandonderzoek registratieobject verzonden naar de aanvrager.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="DispatchDataResponseType">
-        <xs:complexContent>
-            <xs:extension base="brocom:DispatchResponseType">
-                <xs:sequence>
-                    <xs:element name="dispatchDocument" type="brocom:AbstractRegistrationObjectPropertyType" nillable="false" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het element dispatchDocument bevat de gegevens van een FRD registratieobject. Vanwege het polymorfe karakter is het type of een BRO_DO uit de package brocom of een FRD_O of een FRD_O_DP uit de package dsfrd. Deze drie types hebben allen als gemeenschappelijke vader het type AbstractRegistrationObject uit de package brocom.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="determinationType"
+                           minOccurs="0"
+                           maxOccurs="1"
+                           type="frdcom:DeterminationTypeType">
+                  <xs:annotation>
+                     <xs:appinfo>
+                        <CodeListName>DeterminationType</CodeListName>
+                        <CodeListURI/>
+                     </xs:appinfo>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het soort bepaling dat is uitgevoerd.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element minOccurs="0"
+                           maxOccurs="unbounded"
+                           name="instrumentConfiguration"
+                           nillable="false"
+                           type="frdcom:InstrumentConfigurationPropertyType"/>
+               <xs:element minOccurs="0"
+                           maxOccurs="unbounded"
+                           name="relatedElectromagneticMeasurement"
+                           nillable="false"
+                           type="frdcom:ElectromagneticMeasurementPropertyType"/>
+               <xs:element minOccurs="1"
+                           maxOccurs="1"
+                           name="groundwaterMonitoringTube"
+                           nillable="false"
+                           type="frdcom:MonitoringTubePropertyType"/>
+               <xs:element minOccurs="1"
+                           maxOccurs="unbounded"
+                           name="groundwaterMonitoringNet"
+                           nillable="false"
+                           type="frdcom:GroundwaterMonitoringNetPropertyType"/>
+               <xs:element minOccurs="0"
+                           maxOccurs="unbounded"
+                           name="measurementConfiguration"
+                           nillable="false"
+                           type="frdcom:MeasurementConfigurationPropertyType"/>
+               <xs:element minOccurs="0"
+                           maxOccurs="unbounded"
+                           name="relatedGeoElectricMeasurement"
+                           nillable="false"
+                           type="frdcom:GeoElectricMeasurementPropertyType"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="FRD_O_DPPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="dsfrd:FRD_O_DP"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:element name="FRD_O"
+               type="dsfrd:FRD_OType"
+               substitutionGroup="dsfrd:FRD_O_DP">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het uitgiftedocument dat wordt uitgeleverd als de afnemer niet de bronhouder of dataleverancier is van het registratieobject en het registratieobject niet uit registratie is genomen.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="FRD_OType">
+      <xs:complexContent>
+         <xs:extension base="dsfrd:FRD_O_DPType"/>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="FRD_OPropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="dsfrd:FRD_O"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
+   <xs:element name="DispatchDataResponse"
+               type="dsfrd:DispatchDataResponseType"
+               substitutionGroup="brocom:DispatchResponse">
+      <xs:annotation>
+         <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het bericht DispatchDataResponse is een specialisatie van de abstract klasse DispatchDataResponse uit de package brocommon, waaraan het een dispatchDocument toevoegt. Met dit bericht worden, als response op een DispatchDataRequest, de gegevens over een specifiek formatieweerstandonderzoek registratieobject verzonden naar de aanvrager.</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:complexType name="DispatchDataResponseType">
+      <xs:complexContent>
+         <xs:extension base="brocom:DispatchResponseType">
+            <xs:sequence>
+               <xs:element minOccurs="0"
+                           maxOccurs="1"
+                           name="dispatchDocument"
+                           nillable="false"
+                           type="brocom:AbstractRegistrationObjectPropertyType">
+                  <xs:annotation>
+                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het element dispatchDocument bevat de gegevens van een FRD registratieobject. Vanwege het polymorfe karakter is het type of een BRO_DO uit de package brocom of een FRD_O of een FRD_O_DP uit de package dsfrd. Deze drie types hebben allen als gemeenschappelijke vader het type AbstractRegistrationObject uit de package brocom.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="DispatchDataResponsePropertyType">
+      <xs:sequence minOccurs="0">
+         <xs:element ref="dsfrd:DispatchDataResponse"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+   </xs:complexType>
 </xs:schema>
