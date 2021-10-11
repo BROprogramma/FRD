@@ -287,7 +287,7 @@ Explanation: De juiste datum is opgenomen in het sourceDocument.</xs:documentati
 Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de bronhouder van het regfistratieobject. Het is in de registratie opgenomen om de communicatie tussen de registerbeheerder en de bronhouder of dataleverancier te vergemakkelijken.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element minOccurs="1"
+                    <xs:element minOccurs="0"
                            maxOccurs="unbounded"
                            name="groundwaterMonitoringNet"
                            nillable="false"
@@ -399,7 +399,7 @@ Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de b
 Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de bronhouder van het regfistratieobject. Het is in de registratie opgenomen om de communicatie tussen de registerbeheerder en de bronhouder of dataleverancier te vergemakkelijken.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element minOccurs="1"
+                    <xs:element minOccurs="0"
                            maxOccurs="unbounded"
                            name="groundwaterMonitoringNet"
                            nillable="false"
