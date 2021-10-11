@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:brocom="http://www.broservices.nl/xsd/brocommon/3.0"
-           xmlns:dsfrd="http://www.broservices.nl/xsd/dsfrd/1.0"
-           xmlns:frdcom="http://www.broservices.nl/xsd/frdcommon/1.0"
-           xmlns:gml="http://www.opengis.net/gml/3.2"
-           xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://www.broservices.nl/xsd/dsfrd/1.0"
-           elementFormDefault="qualified"
-           attributeFormDefault="unqualified"
-           version="0.2.0">
+<xs:schema 
+        xmlns:brocom="http://www.broservices.nl/xsd/brocommon/3.0"
+        xmlns:dsfrd="http://www.broservices.nl/xsd/dsfrd/1.0"
+        xmlns:frdcom="http://www.broservices.nl/xsd/frdcommon/1.0"
+        xmlns:gml="http://www.opengis.net/gml/3.2"
+        xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.broservices.nl/xsd/dsfrd/1.0"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified"
+        version="0.2.0">
 
     <xs:annotation>
         <xs:appinfo source="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd">
