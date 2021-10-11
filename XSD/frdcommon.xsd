@@ -128,14 +128,14 @@ Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de b
                     </xs:element>
                     <xs:element minOccurs="1"
                            maxOccurs="1"
-                           name="relatedInstrumentConfiguration"
-                           nillable="false"
-                           type="frdcom:InstrumentConfigurationPropertyByReferenceType"/>
-                    <xs:element minOccurs="1"
-                           maxOccurs="1"
                            name="measurementSeries"
                            nillable="false"
                            type="swe:DataArrayPropertyType"/>
+                    <xs:element minOccurs="1"
+                           maxOccurs="1"
+                           name="relatedInstrumentConfiguration"
+                           nillable="false"
+                           type="frdcom:InstrumentConfigurationPropertyByReferenceType"/>
                     <xs:element minOccurs="1"
                            maxOccurs="1"
                            name="relatedCalculatedApparentFormationResistance"
