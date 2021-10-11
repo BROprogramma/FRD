@@ -128,9 +128,9 @@ Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de b
                     </xs:element>
                     <xs:element minOccurs="1"
                            maxOccurs="1"
-                           name="relatedInstrumenconfiguration"
+                           name="relatedInstrumentConfiguration"
                            nillable="false"
-                           type="frdcom:InstrumentConfigurationPropertyType"/>
+                           type="frdcom:InstrumentConfigurationPropertyByReferenceType"/>
                     <xs:element minOccurs="1"
                            maxOccurs="1"
                            name="measurementSeries"
@@ -379,10 +379,10 @@ Explanation: Het meetinstrument kan twee ontvangstspoelen bevatten. Bij aanwezig
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <xs:complexType name="InstrumentConfigurationPropertyType">
+    <xs:complexType name="InstrumentConfigurationPropertyByReferenceType">
         <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
-    <xs:complexType name="InstrumentConfigurationvalueType">
+    <xs:complexType name="InstrumentConfigurationPropertyByValueType">
         <xs:sequence minOccurs="0">
             <xs:element ref="frdcom:InstrumentConfiguration"/>
         </xs:sequence>
@@ -433,10 +433,10 @@ Explanation: Iedere individuele meting aan een geo-ohmkabel wordt aan de hand va
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <xs:complexType name="MeasurementConfigurationPropertyType">
+    <xs:complexType name="MeasurementConfigurationPropertyByReferenceType">
         <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
-    <xs:complexType name="MeasurementConfigurationValueType">
+    <xs:complexType name="MeasurementConfigurationPropertyByValueType">
         <xs:sequence minOccurs="0">
             <xs:element ref="frdcom:MeasurementConfiguration"/>
         </xs:sequence>
@@ -477,54 +477,6 @@ Explanation: De monitoringbuis als onderdeel van het registratieobject Grondwate
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="ApparentFormationResistanceRecordType">
-        <xs:complexContent>
-            <xs:extension base="swe:DataRecordType">
-                <xs:sequence>
-                    <xs:element name="verticalPosition" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De verticale positie waarop de formatieweerstand is bepaald.
-Explanation: De verticale positie wordt afgeleid van de positie van de bovenkant van de monitoringbuis.waarin de meting wordt uitgevoerd.</xs:documentation>
-                        </xs:annotation>
-                        <xs:complexType>
-                            <xs:simpleContent>
-                                <xs:restriction base="gml:MeasureType">
-                                    <xs:attribute name="uom" type="gml:UomIdentifier" use="required" fixed="m"/>
-                                </xs:restriction>
-                            </xs:simpleContent>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="apparentFormationResistance" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De schijnbare formatieweerstand is de omrekening van de gemeten weerstand of gemeten geleidbaarheid op een bepaalde diepte naar een schijnbare formatieweerstand.</xs:documentation>
-                        </xs:annotation>
-                        <xs:complexType>
-                            <xs:simpleContent>
-                                <xs:restriction base="gml:MeasureType">
-                                    <xs:attribute name="uom"
-                                         type="gml:UomIdentifier"
-                                         use="required"
-                                         fixed="ohm.m"/>
-                                </xs:restriction>
-                            </xs:simpleContent>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="qualityControlStatus"
-                           minOccurs="1"
-                           maxOccurs="1"
-                           type="frdcom:QualityControlStatusType">
-                        <xs:annotation>
-                            <xs:appinfo>
-                                <CodeListName>QualityControlStatus</CodeListName>
-                                <CodeListURI/>
-                            </xs:appinfo>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het eindoordeel van de bronhouder over de kwaliteit van een individueel meetwaarde van de formatieweerstand op basis van een, voor de meting gebruikte, beoordelingsprocedure.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
     <xs:complexType name="ElectrodePairType">
         <xs:sequence>
             <xs:element minOccurs="1"
@@ -547,52 +499,6 @@ Explanation: De verticale positie wordt afgeleid van de positie van de bovenkant
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="ElectromagneticMeasurementRecordType">
-        <xs:complexContent>
-            <xs:extension base="swe:DataRecordType">
-                <xs:sequence>
-                    <xs:element name="verticalPosition" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De verticale positie wordt afgeleid van de positie van de bovenkant van de buis waarin de meting wordt uitgevoerd.</xs:documentation>
-                        </xs:annotation>
-                        <xs:complexType>
-                            <xs:simpleContent>
-                                <xs:restriction base="gml:MeasureType">
-                                    <xs:attribute name="uom" type="gml:UomIdentifier" use="required" fixed="m"/>
-                                </xs:restriction>
-                            </xs:simpleContent>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="primaryValue" minOccurs="1" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De primaire meetwaarde van de elektromagnetische meting.
-Explanation: Bij een elektromagnetische meting is deze waarde altijd aanwezig. Bij een meetinstrument met meerdere spoelen is dit de meting tussen de spoelen met het grootste afstandinterval.</xs:documentation>
-                        </xs:annotation>
-                        <xs:complexType>
-                            <xs:simpleContent>
-                                <xs:restriction base="gml:MeasureType">
-                                    <xs:attribute name="uom" type="gml:UomIdentifier" use="required" fixed="mS/m"/>
-                                </xs:restriction>
-                            </xs:simpleContent>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="secondaryValue" minOccurs="0" maxOccurs="1">
-                        <xs:annotation>
-                            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De aanvullende secundaire meetwaarde van de elektromagnetische meting.
-Explanation: Bij een meetinstrument met meerdere ontvangstspoelen is dit de meting tussen de spoelen met het kleinste afstandsinterval, de short normal.</xs:documentation>
-                        </xs:annotation>
-                        <xs:complexType>
-                            <xs:simpleContent>
-                                <xs:restriction base="gml:MeasureType">
-                                    <xs:attribute name="uom" type="gml:UomIdentifier" use="required" fixed="mS/m"/>
-                                </xs:restriction>
-                            </xs:simpleContent>
-                        </xs:complexType>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
     <xs:complexType name="GeoElectricMeasurementValueType">
         <xs:sequence>
             <xs:element name="resistance" minOccurs="1" maxOccurs="1" nillable="true">
@@ -611,7 +517,7 @@ Explanation: Bij een meetinstrument met meerdere ontvangstspoelen is dit de meti
                      maxOccurs="1"
                      name="relatedMeasurementConfiguration"
                      nillable="false"
-                     type="frdcom:MeasurementConfigurationPropertyType"/>
+                     type="frdcom:MeasurementConfigurationPropertyByReferenceType"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="GMWElectrodeReferenceType">

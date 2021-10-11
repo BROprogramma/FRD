@@ -116,12 +116,12 @@ Explanation: De gegevens staan niet in een brondocument, maar worden automatisch
                            maxOccurs="unbounded"
                            name="instrumentConfiguration"
                            nillable="false"
-                           type="frdcom:InstrumentConfigurationvalueType"/>
+                           type="frdcom:InstrumentConfigurationPropertyByValueType"/>
                     <xs:element minOccurs="0"
                            maxOccurs="unbounded"
                            name="measurementConfiguration"
                            nillable="false"
-                           type="frdcom:MeasurementConfigurationValueType"/>
+                           type="frdcom:MeasurementConfigurationPropertyByValueType"/>
                     <xs:element minOccurs="0"
                            maxOccurs="unbounded"
                            name="relatedElectromagneticMeasurement"

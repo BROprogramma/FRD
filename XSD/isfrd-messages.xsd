@@ -209,7 +209,7 @@ Explanation: De juiste datum is opgenomen in het sourceDocument.</xs:documentati
                 <xs:sequence>
                     <xs:element minOccurs="1"
                            maxOccurs="1"
-                           name="relatedFormationResistanceDetermination"
+                           name="relatedElectromagneticMeasurement"
                            nillable="false"
                            type="frdcom:ElectromagneticMeasurementPropertyType"/>
                 </xs:sequence>
@@ -235,7 +235,7 @@ Explanation: De juiste datum is opgenomen in het sourceDocument.</xs:documentati
                 <xs:sequence>
                     <xs:element minOccurs="1"
                            maxOccurs="1"
-                           name="relatedFormationResistanceDetermination"
+                           name="relatedGeoElectricMeasurement"
                            nillable="false"
                            type="frdcom:GeoElectricMeasurementPropertyType"/>
                 </xs:sequence>
@@ -300,12 +300,12 @@ Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de b
                            maxOccurs="unbounded"
                            name="instrumentConfiguration"
                            nillable="false"
-                           type="frdcom:InstrumentConfigurationvalueType"/>
+                           type="frdcom:InstrumentConfigurationPropertyByValueType"/>
                     <xs:element minOccurs="0"
                            maxOccurs="unbounded"
                            name="measurementConfiguration"
                            nillable="false"
-                           type="frdcom:MeasurementConfigurationValueType"/>
+                           type="frdcom:MeasurementConfigurationPropertyByValueType"/>
                     <xs:element minOccurs="0"
                            maxOccurs="unbounded"
                            name="relatedElectromagneticMeasurement"
@@ -341,7 +341,7 @@ Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de b
                            maxOccurs="1"
                            name="instrumentConfiguration"
                            nillable="false"
-                           type="frdcom:InstrumentConfigurationvalueType"/>
+                           type="frdcom:InstrumentConfigurationPropertyByValueType"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -367,7 +367,7 @@ Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de b
                            maxOccurs="unbounded"
                            name="measurementConfiguration"
                            nillable="false"
-                           type="frdcom:MeasurementConfigurationValueType"/>
+                           type="frdcom:MeasurementConfigurationPropertyByValueType"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -412,12 +412,12 @@ Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de b
                            maxOccurs="unbounded"
                            name="instrumentConfiguration"
                            nillable="false"
-                           type="frdcom:InstrumentConfigurationvalueType"/>
+                           type="frdcom:InstrumentConfigurationPropertyByValueType"/>
                     <xs:element minOccurs="0"
                            maxOccurs="unbounded"
                            name="measurementConfiguration"
                            nillable="false"
-                           type="frdcom:MeasurementConfigurationValueType"/>
+                           type="frdcom:MeasurementConfigurationPropertyByValueType"/>
                     <xs:element minOccurs="0"
                            maxOccurs="unbounded"
                            name="relatedElectromagneticMeasurement"
