@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema 
-        xmlns:brocom="http://www.broservices.nl/xsd/brocommon/3.0"
-        xmlns:frdcom="http://www.broservices.nl/xsd/frdcommon/1.0"
-        xmlns:gml="http://www.opengis.net/gml/3.2"
-        xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0"
-        xmlns:swe="http://www.opengis.net/swe/2.0"
-        xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://www.broservices.nl/xsd/frdcommon/1.0"
-        elementFormDefault="qualified"
-        attributeFormDefault="unqualified"
-        version="0.2.0">
+<xs:schema xmlns:brocom="http://www.broservices.nl/xsd/brocommon/3.0"
+           xmlns:frdcom="http://www.broservices.nl/xsd/frdcommon/1.0"
+           xmlns:gml="http://www.opengis.net/gml/3.2"
+           xmlns:gmlsf="http://www.opengis.net/gmlsf/2.0"
+           xmlns:swe="http://www.opengis.net/swe/2.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.broservices.nl/xsd/frdcommon/1.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="0.2.0">
 
     <xs:annotation>
         <xs:appinfo source="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd">
@@ -17,7 +16,7 @@
         </xs:appinfo>
     </xs:annotation>
 
-    <xs:import namespace="http://www.broservices.nl/xsd/brocommon/3.0" schemaLocation="https://schema.broservices.nl/xsd/brocommon/3.0/brocommon.xsd"/>
+	<xs:import namespace="http://www.broservices.nl/xsd/brocommon/3.0" schemaLocation="https://schema.broservices.nl/xsd/brocommon/3.0/brocommon.xsd"/>
     <xs:import namespace="http://www.opengis.net/swe/2.0" schemaLocation="https://schema.broservices.nl/profile/swe/1.0/swe-profile.xsd"/>
     <xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="https://schema.broservices.nl/profile/gml/1.0/gml-profile.xsd"/>
 
@@ -383,10 +382,9 @@ Explanation: Het meetinstrument kan twee ontvangstspoelen bevatten. Bij aanwezig
         <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
     <xs:complexType name="InstrumentConfigurationPropertyByValueType">
-        <xs:sequence minOccurs="0">
+        <xs:sequence minOccurs="1">
             <xs:element ref="frdcom:InstrumentConfiguration"/>
         </xs:sequence>
-        <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
 
     <xs:element name="MeasurementConfiguration"
@@ -437,7 +435,7 @@ Explanation: Iedere individuele meting aan een geo-ohmkabel wordt aan de hand va
         <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
     </xs:complexType>
     <xs:complexType name="MeasurementConfigurationPropertyByValueType">
-        <xs:sequence minOccurs="0">
+        <xs:sequence minOccurs="1">
             <xs:element ref="frdcom:MeasurementConfiguration"/>
         </xs:sequence>
     </xs:complexType>
