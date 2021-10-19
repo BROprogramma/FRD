@@ -46,7 +46,7 @@ Explanation: Als bij de Geo-ohmkabel meetmethode onder het IMBR/A-regime de waar
             <xs:extension base="gml:AbstractFeatureType">
                 <xs:sequence>
                     <xs:element name="calculationOperator"
-                           minOccurs="1"
+                           minOccurs="0"
                            maxOccurs="1"
                            nillable="true"
                            type="brocom:OrganizationType">
@@ -104,7 +104,7 @@ Explanation: Formatieweerstandonderzoek wordt uitgevoerd of volgens de electroma
                         </xs:annotation>
                     </xs:element>
                     <xs:element name="measurementOperator"
-                           minOccurs="1"
+                           minOccurs="0"
                            maxOccurs="1"
                            nillable="true"
                            type="brocom:OrganizationType">
@@ -185,7 +185,7 @@ Explanation: Deze datum is voor gebruikers de belangrijkste datum, omdat dit de 
                         </xs:annotation>
                     </xs:element>
                     <xs:element name="measurementOperator"
-                           minOccurs="1"
+                           minOccurs="0"
                            maxOccurs="1"
                            type="brocom:OrganizationType">
                         <xs:annotation>
