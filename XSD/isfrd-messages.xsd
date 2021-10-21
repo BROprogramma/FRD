@@ -455,7 +455,6 @@ Explanation: Het gegeven wordt alleen uitgeleverd aan de dataleverancier en de b
             <xs:element ref="isfrd:FRD_GEM_MeasurementConfiguration"/>
             <xs:element ref="isfrd:FRD_EMM_Measurement"/>
             <xs:element ref="isfrd:FRD_GEM_Measurement"/>
-            <xs:element ref="isfrd:FRD_WithHistory"/>
         </xs:choice>
     </xs:complexType>
     <xs:complexType name="SourceDocumentType">
