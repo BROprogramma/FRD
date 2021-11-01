@@ -115,7 +115,7 @@ Explanation: Het gegeven staat niet in een brondocument, maar wordt automatisch 
 Explanation: De gegevens staan niet in een brondocument, maar worden automatisch door de basisregistratie ondergrond gegenereerd.</xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element minOccurs="1"
+                    <xs:element minOccurs="0"
                            maxOccurs="unbounded"
                            name="groundwaterMonitoringNet"
                            nillable="false"
