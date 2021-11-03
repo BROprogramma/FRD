@@ -21,7 +21,7 @@
            targetNamespace="http://www.broservices.nl/xsd/dsfrd/1.0"
            elementFormDefault="qualified"
            attributeFormDefault="unqualified"
-           version="0.2.0">
+           version="0.2.1">
 
     <xs:annotation>
         <xs:appinfo source="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd">
@@ -64,14 +64,14 @@
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:element name="FRD_O_DP"
-               type="dsfrd:FRD_O_DPType"
+    <xs:element name="FRD_O"
+               type="dsfrd:FRD_OType"
                substitutionGroup="brocom:RegistrationObject">
         <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het uitgiftedocument dat wordt uitgeleverd als de afnemer tevens de bronhouder of dataleverancier is van het registratieobject.</xs:documentation>
+            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het uitgiftedocument dat wordt uitgeleverd als de afnemer niet de bronhouder of dataleverancier is van het registratieobject en het registratieobject niet uit registratie is genomen.</xs:documentation>
         </xs:annotation>
     </xs:element>
-    <xs:complexType name="FRD_O_DPType">
+    <xs:complexType name="FRD_OType">
         <xs:complexContent>
             <xs:extension base="brocom:RegistrationObjectType">
                 <xs:sequence>
@@ -149,27 +149,27 @@ Explanation: De gegevens staan niet in een brondocument, maar worden automatisch
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <xs:complexType name="FRD_O_DPPropertyType">
-        <xs:sequence minOccurs="1">
-            <xs:element ref="dsfrd:FRD_O_DP"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:element name="FRD_O"
-               type="dsfrd:FRD_OType"
-               substitutionGroup="dsfrd:FRD_O_DP">
-        <xs:annotation>
-            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het uitgiftedocument dat wordt uitgeleverd als de afnemer niet de bronhouder of dataleverancier is van het registratieobject en het registratieobject niet uit registratie is genomen.</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:complexType name="FRD_OType">
-        <xs:complexContent>
-            <xs:extension base="dsfrd:FRD_O_DPType"/>
-        </xs:complexContent>
-    </xs:complexType>
     <xs:complexType name="FRD_OPropertyType">
         <xs:sequence minOccurs="1">
             <xs:element ref="dsfrd:FRD_O"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="FRD_O_DP"
+               type="dsfrd:FRD_O_DPType"
+               substitutionGroup="dsfrd:FRD_O">
+        <xs:annotation>
+            <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het uitgiftedocument dat wordt uitgeleverd als de afnemer tevens de bronhouder of dataleverancier is van het registratieobject.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:complexType name="FRD_O_DPType">
+        <xs:complexContent>
+            <xs:extension base="dsfrd:FRD_OType"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="FRD_O_DPPropertyType">
+        <xs:sequence minOccurs="1">
+            <xs:element ref="dsfrd:FRD_O_DP"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
