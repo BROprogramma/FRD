@@ -31,7 +31,7 @@
     </field>
     <field name="qualityControlStatus">
         <Category>
-            <codeSpace xlink:href="urn:bro:frd:StatusQualityControl"/>
+            <codeSpace xlink:href="urn:bro:frd:QualityControlStatus"/>
         </Category>
     </field>
 </DataRecord>

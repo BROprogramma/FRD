@@ -21,7 +21,7 @@
            targetNamespace="http://www.broservices.nl/xsd/frdcommon/1.0"
            elementFormDefault="qualified"
            attributeFormDefault="unqualified"
-           version="0.2.0">
+           version="0.2.1">
 
     <xs:annotation>
         <xs:appinfo source="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd">
@@ -636,7 +636,7 @@ Explanation: De positie van een elektrode wordt nooit direct bepaald. Bij inrich
                 <xs:attribute name="codeSpace"
                           type="xs:anyURI"
                           use="required"
-                          fixed="urn:bro:frd:StatusQualityControl"/>
+                          fixed="urn:bro:frd:QualityControlStatus"/>
             </xs:restriction>
         </xs:simpleContent>
     </xs:complexType>
