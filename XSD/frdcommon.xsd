@@ -21,12 +21,13 @@
            targetNamespace="http://www.broservices.nl/xsd/frdcommon/1.0"
            elementFormDefault="qualified"
            attributeFormDefault="unqualified"
-           version="0.2.1">
+           version="0.3">
 
     <xs:annotation>
         <xs:appinfo source="http://schemas.opengis.net/gmlsfProfile/2.0/gmlsfLevels.xsd">
             <gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
         </xs:appinfo>
+        <xs:documentation>Differences between version 0.3 and 0.2: changed attributes in GMWElectrodeReferenceType.</xs:documentation>
     </xs:annotation>
 
 	<xs:import namespace="http://www.broservices.nl/xsd/brocommon/3.0" schemaLocation="https://schema.broservices.nl/xsd/brocommon/3.0/brocommon.xsd"/>
@@ -533,19 +534,6 @@ Explanation: De monitoringbuis als onderdeel van het registratieobject Grondwate
     </xs:complexType>
     <xs:complexType name="GMWElectrodeReferenceType">
         <xs:sequence>
-            <xs:element name="broId"
-                     minOccurs="1"
-                     maxOccurs="1"
-                     type="brocom:RegistrationObjectCodeType">
-                <xs:annotation>
-                    <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De identificatie van de grondwatermonitoringput in de basisregistratie ondergrond</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="tubeNumber" type="xs:integer" minOccurs="1" maxOccurs="1">
-                <xs:annotation>
-                    <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het identificerende nummer van de monitoringbuis in de grondwatermonitoringput in de basisregistratie ondergrond.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
             <xs:element name="cableNumber"
                      type="xs:integer"
                      minOccurs="1"
@@ -562,7 +550,7 @@ Explanation: De monitoringbuis als onderdeel van het registratieobject Grondwate
                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: Het identificerende nummer van de elektrode van een geo-ohmkabel in de grondwatermonitoringput in de basisregistratie ondergrond.</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="electrodePosition" minOccurs="1" maxOccurs="1">
+            <xs:element name="electrodePosition" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation source="http://www.imvertor.org/model-info/technical-documentation">Definition: De elektrodepositie van de elektrode aan een geo-ohmkabel in de grondwatermonitoringput in de basisregistratie ondergrond.
 Explanation: De positie van een elektrode wordt nooit direct bepaald. Bij inrichting van de grondwatermonitoringput wordt de positie afgeleid van de positie van de bovenkant van de buis.</xs:documentation>
@@ -576,7 +564,7 @@ Explanation: De positie van een elektrode wordt nooit direct bepaald. Bij inrich
                 </xs:complexType>
             </xs:element>
             <xs:element name="electrodeStatus"
-                     minOccurs="1"
+                     minOccurs="0"
                      maxOccurs="1"
                      type="frdcom:ElectrodeStatusType">
                 <xs:annotation>
