@@ -1,0 +1,144 @@
+<!-- Below file is meant to be used as a data-include. -->
+<!-- Not that it isn't packaged in an html body. This does work, but maybe embedding it is more safe/explicit? -->
+<h3>Belangrijkste entiteiten</h3>
+<p>In deze paragraaf wordt een beschrijvende toelichting geven op de gegevensinhoud van de belangrijkste entiteiten. De expliciete definities zijn te vinden in de tabellen van de gegevensdefinitie in <a href="#cat">hoofdstuk 5</a> Als eerste wordt de hoofdentiteit beschreven, daarna de overige entiteiten.</p> 
+<!-- 3.4.1 Formatieweerstandonderzoek -->
+<section id="entiteit-formatieweerstandonderzoek">
+	<h4>Formatieweerstandonderzoek</h4>
+	<p>Het registratieobject Formatieweerstandonderzoek (FRD) bevat de meetwaardereeks(en) gemeten aan de buitenkant van een grondwatermonitoringput (geo-ohm) of de meetwaardereeks(en) gemeten in
+	een monitoringbuis van een grondwatermonitoringput (elektromagnetisch). Daarnaast bevat het formatieweerstandonderzoek de berekende schijnbare formatieweerstand. Uitgangspunt is dat een formatieweerstandonderzoek
+	één bronhouder heeft, maar wel uitgevoerd kan zijn ten behoeve van meerdere grondwatermonitoringnetten die van één of meerdere bronhouders kunnen zijn.</p>
+	<p>Een Formatieweerstandonderzoek wordt uitgevoerd of volgens de electromagnetische meetmethode of volgens de geoohmkabel meetmethode, nooit met beide tegelijkertijd. Beide onderzoeken kunnen wel plaatsvinden in of aan de zelfde put, maar ze krijgen dan een ander BRO-ID.</p>
+	<p>De gegevens van een formatieweerstandonderzoek ontstaan gedurende de "levensduur" van het onderzoek, dat wil zeggen: gedurende de monitoringsperiode. Een belangrijk uitgangspunt voor dit registratieobject is dat er op min of meer vastomlijnde momenten (deel)gegevens geregistreerd worden als er daartoe "aanleidingen" zijn. Voorbeelden van aanleidingen zijn: het starten van het formatieweerstandonderzoek, het bekend zijn van de her-te-gebruiken instrument- of meetconfiguratie, het beschikbaar komen van meetgegevens en het beëindigen van het formatieweerstandonderzoek. Het resultaat van een formatieweerstandonderzoek wordt dus niet in één keer geregistreerd, na beendiging van het monitoren. </p>
+	<p>Een formatieweerstandonderzoek wordt gedurende de levensduur steeds aangevuld met nieuwe metingen en berekeningen. De complete set van aanleidingen die zich voordoen gedurende de levensduur van het
+	formatieweerstandonderzoek, en de daaruit af te leiden inhoud van berichten, zullen worden beschreven in de berichtencatalogus. In deze
+	berichtencatalogus worden ook de mogelijke correctieberichten beschreven.</p>
+	<p>Een formatieweerstandonderzoek kan ten behoeve van meer dan één monitoringdoel worden uitgevoerd. Dit betekent dat een onderzoek in het kader van meerdere
+	grondwatermonitoringnetten tegelijk uitgevoerd kan zijn. In het registratieobject grondwatermonitoringnet worden het doel van de monitoring (monitoringdoel) en het wettelijk kader waar dit doel uit
+	volgt (kader aanlevering) geregistreerd. In het registratieobject formatieweerstandonderzoek wordt het monitoringdoel en het wettelijk kader waar dit doel uit volgt niet geregistreerd. Met de verwijzing van het grondwaterstandonderzoek naar één of meer grondwatermonitoringnetten
+	(zie <a href="#intro-Grondwaterdomein"></a>) is het doel en het wettelijk kader van het formatieweerstandonderzoek indirect geregistreerd. De verwijzing naar het grondwatermonitoringnet wordt gemaakt op basis van het BRO-ID van het
+	grondwatermonitoringnet.</p>
+	<p>Bij een formatieweerstandonderzoek ligt de verwijzing vast naar de monitoringbuis waar het onderzoek is uitgevoerd (zie <a href="#intro-Grondwaterdomein"></a>) grondwatermonitoring in de BRO). De verwijzing wordt gemaakt op basis van het <i>BRO-ID</i> van de <i>grondwatermonitoringput</i> in
+	combinatie met het <i>buisnummer</i> van de monitoringbuis waarin het onderzoek is uitgevoerd. </p>
+	<p>De entiteit "Formatieweerstand" is een kapstok voor twee meetmethodes om de (schijnbare) formatieweerstand te bepalen: de elektromagnetische meetmethode en de geo-ohmkabel meetmethode. Een formatieweerstandonderzoek volgt door de tijd heen altijd maar één meetmethode.  Een formatieweerstandonderzoek kan gestart worden zonder dat de meetmethode bekend is. Aan de hand van de eerste aangeleverde gegevens  ten aanzien van instrument- of meetconfiguratie wordt afgeleid welke meetmethode in het vervolg gehanteerd gaat worden.</p>
+</section>
+<!-- 3.4.2 Elektromagnetische meetmethode -->
+<section id="entiteit-EMmeetmethode">
+	<h4>Elektromagnetische meetmethode</h4>
+	<p>De elektromagnetische meetmethode is een methode om de schijnbare formatie weerstand vanuit de grondwatermonitoringput of een
+	monitoringbuis te meten. De meting wordt uitgevoerd met een aan een kabel bevestigde elektromagnetische sonde die in een monitoringbuis
+	wordt neergelaten. De sonde bestaat standaard uit twee of meer spoelen met een vaste afstand, waarbij de spoelen een elektromagnetisch signaal
+	uitzenden. In tegenstelling tot de geo-ohmkabel meetmethode, waarbij elektroden op een gefixeerde positie zitten, kunnen deze metingen op
+	elke gewenste diepte worden uitgevoerd. Het meetbereik is niet alleen afhankelijk van de formatie waarin gemeten wordt, maar ook van de
+	grootte en de stand van de spoelen alsmede de frequentie van het uitgezonden elektromagnetische signaal.</p>
+	<p>De meeste elektromagnetische instrumenten meten de schijnbare geleidbaarheid op twee afstanden vanaf de monitoringbuis, als deze veel
+	verschillen dan is dit een indicatie voor beïnvloeding door het aanvulmateriaal rond de monitoringbuis.</p>
+	<p>Elektromagnetische metingen bestrijken vooral het lage weerstandsbereik goed, hoge weerstanden worden beter gemeten met de geo-ohmkabel metingen. Echter, voor de toepassing van het bepalen van zoet-zout overgangen zijn beide methoden uitermate geschikt.</p>
+	<p>Van iedere elektromagnetische meetreeks worden, naast locatie, diepte en meetwaarde, de datum van de meting en de uitvoerdervan de meting vastgelegd. De uitvoerder is de partij die voor de bronhouder geldt als verantwoordelijk voor de uitvoering van de meting.</p>
+	<p>De kwaliteit van de metingen wordt beoordeeld. Hoe dit proces van beoordelen van de kwaliteit van de metingen verloopt, is beschreven in een werkvoorschrift of procedure, de <i>beoordelingsprocedure</i>. Bij het moment van vaststellen van deze versie van de catalogus is een aantal procedures beschreven en beschikbaar. Voor de partijen die deze procedures niet gebruiken maar op een andere, niet beschreven wijze beoordelen, is er de mogelijkheid om aan te geven dat beoordeeld is op basis van het oordeel van een deskundige. Omdat het voor een gebruiker waardevol is 
+	om te weten op welke wijze er is beoordeeld, is het is de bedoeling dat de waardelijst van beoordelingsprocedures wordt aangevuld ten behoeve van volgende versies van de catalogus. </p>
+</section>
+<!-- 3.4.3 Instrumentconfiguratie -->
+<section id="entiteit-Instrumentconfiguratie">
+<h4>Instrumentconfiguratie</h4>
+	<p>Van iedere elektromagnetische meting wordt een aantal gegevens over het meetinstrument vastgelegd in de instrumentconfiguratie.
+	Onderdeel van de instrumentconfiguratie is de instrumentconfiguratie ID. Dit is een door de bronhouder of dataleverancier te bepalen code van maximaal 40 karakters
+	die de kenmerken van een instrumentconfiguratie uniek identificeren. Binnen het registratieobject moet deze ID uniek zijn. Het
+	instrumentconfiguratie ID kan bijvoorbeeld gebruikt worden bij aanvullende leveringen van een formatieweerstandonderzoek: Wanneer een
+	meting wordt aangeleverd die dezelfde instrumentconfiguratie heeft als een meting die al geregistreerd is, kan de bronhouder/dataleverancier
+	ervoor kiezen om niet alle instrumentconfiguratiekenmerken opnieuw aan te leveren maar in plaats daarvan te verwijzen naar de reeds
+	geregistreerde instrumentconfiguratie door alleen de instrumentconfiguratie ID van de reeds geregistreerde
+	instrumentconfiguratie aan te leveren. De overige instrumentconfiguratiekenmerken hoeven in dit geval niet opnieuw aangeleverd te worden.</p>
+	<figure id='image004'> 
+		<img src="../Images/BRO_Cat_FigFWO-3 (1).png" alt="EMmeting" heigth="30%" width="30%"/>
+		<figcaption>Elektromagnetische meting</figcaption>
+	</figure>
+	<p>De afstand tussen de spoelen en de spoelfrequentie hebben invloed op de indringingsdiepte van het elektromagnetische signaal. De
+	relatieve positie van de zendspoel is de afstand tussen de bovenkant van het instrument en de zendspoel. Deze afstand mag niet groter zijn
+	dan de lengte van het instrument. De relatieve positie van de eerste ontvangstspoel is de afstand tussen de bovenkant van het instrument en
+	de eerste elektromagnetische ontvangstspoel. Een instrument kan meerdere ontvangstspoelen bevatten. De aanwezigheid van een tweede
+	ontvangstspoel wordt geregistreerd alsmede de afstand tussen de bovenkant van het instrument en de tweede spoel. Van het instrument
+	wordt ook de totale lengte vastgelegd.</p>
+</section>
+<!-- 3.4.4 Elektromagnetische meetreeks -->
+<section id="entiteit-ElektromagnetischeMeetreeks">
+	<h4>Elektromagnetische meetreeks</h4>
+	<p>Een elektromagnetische meting leidt tot een reeks van elektromagnetische meetrecords. Deze meetrecords met elk een elektromagnetische meting op een bepaalde verticale positie worden gegroepeerd in een elektromagnetische meetreeks. Hierbij hebben alle records of rijen in de reeks dezelfde gegevensopbouw. Van elke elektromagnetische meetreeks wordt een meetreeks-ID vastgelegd. Dit is een door de bronhouder te bepalen meetreeks-ID dat de elektromagnetische meetreeks uniek identificeert. Binnen het registratieobject moet dit meetreeks-ID uniek zijn. </p>
+</section>
+<!-- 3.4.5 Elektromagnetische meetrecords -->
+<section id="entiteit-ElektromagnetischeMeetrecords">
+	<h4>Elektromagnetische meetrecords</h4> 
+	<p>Naast de meetwaarde dient in een meetrecord ook de verticale positie te worden vastgelegd. Omdat een elektromagnetische meting wordt uitgevoerd in een monitoringbuis van een grondwatermonitoringput, wordt
+	de verticale positie gemeten ten opzichte van de bovenkant buis zoals die is vastgelegd in GMW. </p>
+	<p>Bij iedere verticale positie wordt in ieder geval één meetwaarde vastgelegd. Deze eerste schijnbare formatiegeleidbaarheid wordt uitgedrukt in (milli)Siemens per meter (mS/m). Bij een sonde met meerdere
+	ontvangstspoelen is dit de meting met de grootste indringingsdiepte, de "long normal". Bij een sonde met twee ontvangstspoelen geeft de meting met de kleinste indringingsdiepte een
+	indicatie van de invloed van het buismateriaal en het aanvulmateriaal rond de buis op het meetresultaat. Deze meting tussen de spoelen met het kleinste afstandsinterval, de "short normal", is optioneel. </p>
+</section>
+<!-- 3.4.6 Geo-ohmkabel meetmethode -->
+<section id="entiteit-Geo-ohmkabel meetmethode">
+	<h4>Geo-ohmkabel meetmethode</h4>
+	<p>Ten behoeve van geo-ohm metingen wordt bij inrichting van de put een geo-ohmkabel op een aantal punten aan een monitoringbuis bevestigd. De geo-ohmkabel bevat meerdere elektrodes en de posities van
+	de elektrodes ten opzichte van de buis zijn gefixeerd. De elektroden kunnen zowel dienen als punten om stroom in de bodem te injecteren alsook punten waartussen de elektrische weerstand gemeten kan worden.
+	De elektroden van de meetkabel worden daartoe beurtelings geactiveerd met behulp van een elektrische schakeling. Een meting wordt uitgevoerd met vier elektroden: er wordt stroom ingebracht middels een paar (twee)
+	stroomelektroden en er wordt gemeten met een paar (twee) meetelektroden. </p> 
+	<figure id='image005'> 
+		<img src="../Images/BRO_Cat_FigFWO-2-NM.png" alt="Geo-ohmkabelmeting" heigth="30%" width="30%"/>
+		<figcaption>Geo-ohmkabelmeting</figcaption>
+	<p>Deze kabel is, eenmaal geplaatst, niet meer te verplaatsen. De verticale posities van de elektroden liggen vast en moeten goed bekend zijn. Op basis van deze posities kunnen de onderliggende afstanden
+	tussen de elektrodes worden afgeleid. Deze afstanden zijn nodig om de schijnbare formatieweerstand te kunnen berekenen. Daartoe moet de gemeten weerstand in Ohm worden omgezet naar schijnbare
+	formatieweerstand in ohmm via de configuratiefactor. Deze factor wordt bepaald door de afstanden tussen de elektrodes van zowel het meetpaar als stroompaar: de gekozen twee elektroden waarmee gemeten wordt
+	(meetelektroden) en de gekozen twee elektroden die gebruikt worden als stroomelektroden. Dit wordt de meetconfiguratie genoemd. Bij traditionele metingen aan geo-ohmkabels was zowel de elektrodenpositie als ook de
+	meetconfiguratie een vast gegeven en veelal onbekend.</p>
+	<p>In de loop van de tijd zijn er kabels gefabriceerd met een andere meetconfiguratie. Naast de zogenaamde Wenner opstelling (afstand tussen de elektroden gelijk, de buitenste elektroden stroomelektroden,
+	de binnenste electroden meetelektroden) is er bijvoorbeeld ook een opstelling waarbij de twee stroomelektroden vast op "oneindig" (zover mogelijk weg van de meting) moeten staan. Dit maakt dat er een
+	complexere schakeling nodig is, die bovendien ook goed vastgelegd moet zijn, wat in het verleden niet altijd het geval was.</p>
+	<p>Het meetbereik is afhankelijk van de meetconfiguratie. Hoe verder de stroomelektroden uit elkaar staan hoe dieper de stroom de formatie in gaat en hoe groter het volume waarover een formatieweerstandswaarde bepaald wordt. Indien het een homogene omgeving is, dan zal de schijnbare weerstand overal gelijk zijn en
+	maakt de stroomelektrode afstand niet uit. Veelal is de situatie die van niet-homogene ondergrond en is de schijnbare formatie weerstand een gemiddelde weerstand over het volume van de bemeten formatie. Het
+	meetbereik is niet exact vast te stellen: het percentage van de stroom dat door de formatie gaat neemt af met de afstand tot de stroomelektroden: waardoor de bijdrage aan de totale meetwaarde ook
+	afneemt.</p>
+	<p>De entiteit geo-ohmkabelmeetmethode bevat de kenmerken die geleid hebben tot het verkrijgen van een reeks meetwaardes gemeten aan een geo-ohmkabel aan een monitoringbuis van een grondwatermonitoringput.
+	Van iedere geo-ohmkabelmeting worden de datum en de uitvoerder van de meting vastgelegd. De uitvoerder is de partij die voor de bronhouder geldt als verantwoordelijk voor de uitvoering van de meting. </p>
+	<p>Het attribuut beoordelingsprocedure biedt de mogelijkheid om aan te geven dat beoordeeld is op basis van het oordeel van een deskundige of op basis van een vergelijking met voorgaande meting. </p>
+</section>
+<!-- 3.4.7 Geo-ohmmeting meetwaarde -->
+<section id="entiteit-Geo-ohmmeting meetwaarde">
+	<h4>Geo-ohmmeting meetwaarde</h4>
+	<p>Een geo-ohmkabelmeting levert een reeks meetwaardes op. Bij de geo-ohmkabelmeting wordt de elektrische weerstand gemeten tussen de elektrodes van een paar meetelektrodes. De gemeten elektrische
+	weerstand wordt uitgedrukt in ohm (&#8486;).</p>
+</section>
+<!-- 3.4.8 Meetconfiguratie -->
+<section id="entiteit-Meetconfiguratie">
+	<h4>Meetconfiguratie</h4>
+	<p>Iedere meting aan een geo-ohmkabel wordt aan de hand van een meetconfiguratie uitgevoerd. Een meetconfiguratie bestaat uit één paar meetelektrodes en één paar stroomelektrodes. Iedere individuele meting aan een geo-ohmkabel wordt aan de hand van een meetconfiguratie uitgevoerd. </p>
+	<section id="meetconfiguratie ID">
+		<h5>Meetconfiguratie ID</h5>
+		<p>Onderdeel van de entiteit Meetconfiguratie is de <i>meetconfiguratie ID</i>. Dit is een door de bronhouder of dataleverancier te bepalen code van maximaal 40 karakters
+		die de kenmerken van een meetconfiguratie uniek identificeren. Binnen het registratieobject moet deze ID uniek zijn. De meetconfiguratie ID kan bijvoorbeeld gebruikt worden bij aanvullende leveringen van een
+		Formatieweerstandonderzoek. Wanneer een meting wordt aangeleverd die dezelfde meetconfiguratie heeft als een meting die al geregistreerd is,
+		kan de bronhouder/dataleverancier ervoor kiezen om niet alle meetconfiguratiekenmerken opnieuw aan te leveren maar in plaats daarvan te verwijzen naar de reeds geregistreerde meetconfiguratie door alleen de meetconfiguratie ID van de reeds geregistreerde meetconfiguratie
+		aan te leveren. De overige meetconfiguratiekenmerken hoeven in dit geval niet opnieuw aangeleverd te worden. </p>
+	</section>
+	<p>De meetconfiguratie blijft gedurende het onderzoek ongewijzigd zolang de samenstelling van het meetpaar en elektrodepaar ongewijzigd blijft. De elektrodes van de elektrodeparen betreffen de
+	elektrodes, hun elektrodepositie en elektrodenummer van de GMW-monitoringbuis en de daaraan bevestigde geo-ohmkabel waarnaar in het Formatieweerstandonderzoek verwezen wordt. Deze gegevens zijn dus niet vanuit dit RO zelf te ‘beïnvloeden’. Voorwaarde is daarmee uiteraard wel dat de bronhouder/ dataleverancier van het Formatieweerstandonderzoek de beschikking heeft van deze GMW gegevens.
+	Voor experimentele doeleinden kan gekozen worden voor verschillende meetconfiguraties met de dezelfde geo-ohmkabel. Deze worden in de BRO opgenomen als afzonderlijke Formatieweerstandonderzoeken met een eigen BRO-ID.</p>
+</section>
+<!-- 3.4.9 Schijnbare Formatieweerstand berekening -->
+<section id="entiteit-Schijnbare Formatieweerstand berekening">
+	<h4>Schijnbare Formatieweerstand berekening</h4>
+	<p>Op basis van de meetgegevens kan de schijnbare formatieweerstand op een bepaalde diepte worden berekend. Van deze berekening wordt de datum vastgelegd en de naam van de uitvoerder. De uitvoerder moet binnen de basisregistratie ondergrond als uitvoerder van formatieweerstandonderzoek bekend zijn. </p>
+	<p>Bij de elektromagnetische meting levert het meetinstrument direct een schijnbare formatiegeleidbaarheid uitgedrukt in milliSiemens
+	per meter. De schijnbare formatieweerstand is de reciproke waarde daarvan en wordt berekend door 1 te delen door de schijnbare
+	formatiegeleidbaarheid. </p>
+	<p>Om de schijnbare formatieweerstand te kunnen berekenen uit de geo-ohmkabelmetingen zijn gegevens uit de meetconfiguratie nodig. Uit de meetconfiguratie kunnen de afstanden tussen elektrodes afgeleid
+	worden. Deze afstanden zijn belangrijk om de gemeten weerstand om te rekenen naar een schijnbare formatieweerstand. De afleiding van afstanden uit de meetconfiguratie en de omrekening van weerstand naar
+	schijnbare formatieweerstand wordt niet door de BRO gedaan, de bronhouder dient de afleiding en omrekening zelf te doen en aan te leveren.</p>
+	<p>De kwaliteit van de berekeningen wordt beoordeeld. Hoe dit proces van beoordelen van de kwaliteit van de berekeningen verloopt, is beschreven in een werkvoorschrift of procedure, de beoordelingsprocedure.</p>
+</section>
+<!-- 3.4.10 Schijnbare formatieweerstand waarde -->
+<section id="entiteit-Schijnbare Formatieweerstand waarde">
+	<h4>Schijnbare formatieweerstand waarde</h4>
+	<p>De entiteit Schijnbare Formatieweerstand waarde bevat de attributen verticale positie en formatieweerstand. De verticale positie  wordt uitgedrukt in hoogte ten opzichte van NAP. Bij een elektromagnetische meting is verticale positie ten opzichte van NAP al vastgelegd in het Elektromagnetische meting meetrecord. Bij een geo-ohmkabelmeting wordt de verticale positie afgeleid van de posities van de
+	gebruikte elektrodeparen ten opzichte van de bovenkant van de buis, zoals vastgelegd in de entiteit Meetconfiguratie, en de positie bovenkant ten opzichte van NAP, zoals vastgelegd in GMW. </p>
+	<p>Bij de Formatieweerstandberekening wordt bij elke individuele berekening door de bronhouder (of een derde partij in opdracht van een bronhouder) een eindoordeel over de kwaliteit van de berekening
+	aangegeven. Dit eindoordeel wordt gevormd aan de hand van een, voor de formatieweerstandberekening gebruikte beoordelingsprocedure. Het eindoordeel wordt geregistreerd in de status kwaliteitscontrole.</p>
+</section>
