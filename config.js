@@ -1,17 +1,23 @@
 var respecConfig = {
-  specStatus: "GN-VV",
+  specStatus: "GN-WV",
   specType: "IM",
   //subtitle: "BRO gegevenscatalogus",
-  publishDate: "2021-02-01", 
-  logos: [  
+   //publishDate: "2020-03-31", 
+  logos: [
+  {src: 'https://docs.geostandaarden.nl/bro/gen/logo_bro.png',
+    href: "http://basisregistratieondergrond.nl",
+    alt: "Basisregistratie Ondergrond",
+    width: 252,
+    height: 130,
+    id: 'BRO'},
   {
     src: 'https://docs.geostandaarden.nl/bro/gen/logo_minbzk.png',
     href: "https://www.geobasisregistraties.nl/basisregistraties/ondergrond",
     alt: "Ministerie BZK",
-    width: 776,
-    height: 163,
-    id: 'logo_minbzk',
-  }],
+    width: 229,
+    height: 130,
+    id: 'BZK',
+  }]  ,
   editors: [],
   authors: [
     {
@@ -23,8 +29,8 @@ var respecConfig = {
   shortName: "FRD",
   pubDomain: "bro",
   github: "https://github.com/BROprogramma/FRD",
-  //previousPublishDate: "2017-01-01",
-  //previousStatus: "GN-CV",
+  previousPublishDate: "2021-07-01",
+  previousStatus: "GN-DEF",
   localBiblio: {
     
     },
