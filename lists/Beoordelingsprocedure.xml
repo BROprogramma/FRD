@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domeintabel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Beoordelingsprocedure>
+		<Waarde>QCProtocolFormatieweerstandonderzoek2021</Waarde>
+		<IMBRO>v</IMBRO>
+		<IMBROA>v</IMBROA>
+		<Omschrijving>-- Definitie -- QC-protocol Formatieweerstandsonderzoek (2021)</Omschrijving>
+	</Beoordelingsprocedure>
+	<Beoordelingsprocedure>
+		<Waarde>oordeelDeskundige</Waarde>
+		<IMBRO>v</IMBRO>
+		<IMBROA>v</IMBROA>
+		<Omschrijving>-- Definitie -- De beoordeling is gedaan door een expert, niet volgens een expliciet protocol of werkvoorschrift.</Omschrijving>
+	</Beoordelingsprocedure>
+	<Beoordelingsprocedure>
+		<Waarde>vergelijkVoorgaandeMetingen</Waarde>
+		<IMBRO>v</IMBRO>
+		<IMBROA>v</IMBROA>
+		<Omschrijving>-- Definitie -- De gegevens zijn vergeleken met reeds eerder opgenomen gegevens.</Omschrijving>
+	</Beoordelingsprocedure>
+	<Beoordelingsprocedure>
+		<Waarde>onbekend</Waarde>
+		<IMBRO> </IMBRO>
+		<IMBROA>v</IMBROA>
+		<Omschrijving>-- Definitie -- Het is onbekend volgens welke procedure de beoordeling is gedaan (IMBRO/A kwaliteitsregime).</Omschrijving>
+	</Beoordelingsprocedure>
+</domeintabel>
