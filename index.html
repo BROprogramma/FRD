@@ -2,109 +2,64 @@
 <html lang="nl">
 
 <head>
-  <meta content="text/html; charset=utf-8" http-equiv="content-type">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel='shortcut icon' type='image/x-icon' href='https://tools.geostandaarden.nl/respec/style/logos/Geonovum.ico' />
-  <link rel="stylesheet" type="text/css" href="https://tools.geostandaarden.nl/respec/style/bro-localstyle.css" />
-  <title>Basisregistratie Ondergrond Catalogus Formatieweerstand onderzoek (FRD)</title>
-  <script class='remove' src='https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js' async></script>
-  <script class="remove" src="config.js"></script>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="https://cdn.jsdelivr.net/gh/digitalbazaar/respec-mermaid@1.0.1/dist/main.js" class="remove"></script>
+	<script src="https://tools.geostandaarden.nl/respec/config/bro-config.js" class="remove"></script>
+	<script src="js/config.js" class="remove"></script>
+	<script class="remove"> respecConfig = {...organisationConfig, ...respecConfig}</script>
+	<script>document.title = respecConfig.title</script>
+	<title>Catalogus registratie ondergrond Formatieweerstand onderzoek (FRD)</title>
+	<link rel="shortcut icon" type="image/x-icon" href="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.ico"/>
+	<link rel="stylesheet" type="text/css" href="https://tools.geostandaarden.nl/respec/style/bro-localstyle.css"/>
+	<script src="https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js" class="remove" async></script>
 </head>
 
 <body>
-  <!--samenvatting-->
-  <section id='abstract'>
-    <p>Dit document beschrijft de definitie van formatieweerstandonderzoek, met een algemene toelichting.</p>
-  </section>
 
-  <!--STATUS DOCUMENT-->
-	<section id='sotd'>
-	<p></p>
+	<!-- Status van dit document document -->
+	<section id="sotd"></section><!-- Wordt automatisch gevuld -->
+
+	<!-- Samenvatting -->
+	<section id="abstract" data-include-format="markdown" data-include="samenvatting.md"></section>
+
+	<!-- Hoofdstuk 1. Inleiding -->
+	<section id="inleiding">
+		<h2>Inleiding</h2>
+		<section id="leeswijzer" data-include="leeswijzer.md" data-include-format="markdown"></section>
+		<section id="doel-en-doelgroep" data-include-format="markdown" data-include="https://raw.githubusercontent.com/BROprogramma/generiek/gh-pages/doel-en-doelgroep.md"></section>
+		<!-- JV, 29-04-2026: in afwwachting van oplossing: <section id="doel-en-doelgroep" data-include-format="markdown" data-include="https://docs.geostandaarden.nl/bro/gen/doel-en-doelgroep.md"></section> -->
+		<section id="totstandkoming" data-include-format="markdown" data-include="https://raw.githubusercontent.com/BROprogramma/generiek/gh-pages/totstandkoming.md"></section>
+		<section id="beheer" data-include-format="markdown" data-include="https://raw.githubusercontent.com/BROprogramma/generiek/gh-pages/beheer.md"></section>
 	</section>
 
-  <!-- Hoofdstuk 1 INLEIDING -->
-  <section id='inleiding' class='generic informative'>
-    <h2>Inleiding</h2>
-    <section id='doel-en-doelgroep' class='generic' data-include='https://docs.geostandaarden.nl/bro/gen/doel-en-doelgroep.html'>
-    </section>
-    <section id='totstandkoming' class='generic' data-include='https://docs.geostandaarden.nl/bro/gen/totstandkoming.html'>
-    </section>
-    <section id='beheer' class='generic' data-include='https://docs.geostandaarden.nl/bro/gen/beheer.html'>
-    </section>
-    <section id="leeswijzer">
-    <h3>Leeswijzer</h3>
-      	    <p><a href ="#inleiding">Hoofdstuk 1</a> geeft het doel en de doelgroep van een catalogus.</p>
-	    <p><a href ="#algemene-kenmerken-en-begrippen">Hoofdstuk 2</a> behandelt enkele algemene aspecten van het BRO-systeem en begrippen van algemene aard.</p>
-	    <p><a href ="#formatieweerstandonderzoek">Hoofdstuk 3</a> plaatst het object in de gegevenssystematiek van de basisregistratie ondergrond en vertelt wat de benadering is geweest bij het opstellen van de gegevensdefinitie.</p>
-	    <p><a href ="#opbouw-gegevensdefinitie">Hoofdstuk 4</a> vertelt hoe de catalogus is opgebouwd en welke aspecten van de gegevens daarin worden beschreven.</p>
-	    <p><a href ="#gegevensdefinitie">Hoofdstuk 5</a> geeft de inhoud weer van het eerste artikel van de ministeriële regeling en dat is het deel waarin de definitie is opgenomen van het registratieobject, van de delen waaruit het is opgebouwd, de entiteiten, en van de eigenschappen van die delen, de attributen.</p>
-	    <p><a href ="#uitbreidbare-waardelijsten">Hoofdstuk 6</a> geeft de inhoud weer van het tweede artikel van de ministeriële regeling en dat is het deel waarin de uitbreidbare waardelijsten staan waarnaar in hoofdstuk 5 verwezen wordt.</p>
-	  </section>
-  </section>
- 
-  <!-- Hoofdstuk 2 ALGEMENE KENMERKEN EN BEGRIPPEN-->
-	<section id='algemene-kenmerken-en-begrippen' data-include='https://docs.geostandaarden.nl/bro/gen/algemene-kenmerken-en-begrippen.html' class='generic informative'>
+	<!-- Hoofdstuk 2. Algemene kenmerken en bergippen -->
+	<section id="algemene-kenmerken-en-begrippen" data-include-format="markdown" data-include="https://raw.githubusercontent.com/BROprogramma/generiek/gh-pages/h2-algemene-kenmerken-en-begrippen.md" ></section>
+
+	<!-- Hoofdstuk 3. Formatieweerstand onderzoek -->
+	<section id="formatieweerstandonderzoek">
+		<h2>Formatieweerstand onderzoek</h2>
+		<section id="grondwatermonitoring" data-include="./data/FRD_NN_GW_monitoring.html"></section>
+		<section id="intro-Grondwaterdomein" data-include="./data/FRD_NN_BRO_Domein_GW_monitoring.html"></section>
+		<section id="het-FRD" data-include="./data/FRD_WN_FRD.html"></section>
+		<section id="entiteiten" data-include="./data/FRD_WN_Belangrijkste_entiteiten.html"></section>
+		<section id="impact kwaliteitsregime IMBRO/A" data-include="./data/FRD_WN_Impact_KR_IMBRO_A.html"></section>
+		<section id="samenhang ROs in grondwater" data-include="./data/FRD_WN_Samenhang_en_Consistentie_RO_GM_domein.html"></section>
+		<section id="inspire" data-include="./data/FRD_WN_INSPIRE.html"></section>
 	</section>
 
-<!-- Hoofdstuk 3 BESCHRIJVING REGISTRATIEOBJECT = toelichting-->
-<section id="formatieweerstandonderzoek" class='generic informative'>
-	<h2>Formatieweerstandonderzoek</h2>
-	<!-- 3.1 Grondwatermonitoring -->
-	<section id="grondwatermonitoring" data-include='./data/FRD_NN_GW_monitoring.html'></section>
-	<!-- 3.2 Domein grondwatermonitoring in de BRO -->
-	<section id="intro-Grondwaterdomein" data-include='./data/FRD_NN_BRO_Domein_GW_monitoring.html'></section>
-	<!-- 3.3 Het formatieweerstandonderzoek -->
-	<section id="het-FRD" data-include='./data/FRD_WN_FRD.html'></section>
-	<!-- 3.4 Belangrijkste entiteiten -->
-	<section id="entiteiten" data-include='./data/FRD_WN_Belangrijkste_entiteiten.html'></section>
-	<!-- 3.5 Impact kwaliteitsregime IMBRO/A -->
-	<section id="impact kwaliteitsregime IMBRO/A" data-include='./data/FRD_WN_Impact_KR_IMBRO_A.html'></section>
-	<!-- 3.6 Samenhang en consistentie tussen verschillende registratieobjecten in het Grondwaterdomein -->
-	<section id="samenhang ROs in grondwater" data-include='./data/FRD_WN_Samenhang_en_Consistentie_RO_GM_domein.html'></section>
-	<!-- 3.7 INSPIRE -->
-	<section id="inspire" data-include='./data/FRD_WN_INSPIRE.html'></section>
-</section>
+	<!-- Hoofdstuk 4. Opbouw van de gegevensdefinitie -->
+	<section id="h4-gegevensdefinitie" data-include-format="markdown" data-include="https://raw.githubusercontent.com/BROprogramma/generiek/gh-pages/h5-gegevensdefinitie.md"></section>		
 
-<!-- H4 INTRODUCTIE GEGEVENSDEFINITIE GENERIEK-->
-<section id="opbouw-gegevensdefinitie" class='generic informative'>
-    	<h2>Opbouw van de gegevensdefinitie</h2>
-	<section id="gegevensdefinitie" data-include="https://docs.geostandaarden.nl/bro/gen/intro-cat-inleiding.html"></section>
-		<section id="domeinen">
-			<h3>Domeinen</h3>
-			<div id="domeinen-intro" data-include="https://docs.geostandaarden.nl/bro/gen/domeinen-intro.html"></div>
-			<section id="aantal" data-include="https://docs.geostandaarden.nl/bro/gen/aantal.html"></section>
-			<section id="code" data-include="https://docs.geostandaarden.nl/bro/gen/code.html"></section>
-			<section id="gemeten-waarden">
-				<h4>Gemeten waarden</h4>
-				<div id="gemeten-waarden-intro" data-include="https://docs.geostandaarden.nl/bro/gen/gemeten-waarden-intro.html"></div>
-				<section id="meetwaarde" data-include="https://docs.geostandaarden.nl/bro/gen/meetwaarde.html"></section>
-				<section id="inname-gemeten-waarden" data-include="https://docs.geostandaarden.nl/bro/gen/inname-gemeten-waarden.html"></section>
-			</section>
-			<section id="nummer" data-include="https://docs.geostandaarden.nl/bro/gen/nummer.html"></section>
-			<section id="tekst" data-include="https://docs.geostandaarden.nl/bro/gen/tekst.html"></section>		
-			<section id="tijdstip" data-include="https://docs.geostandaarden.nl/bro/gen/datumtijd.html"></section>
-			<section id="waardelijsten">
-				<h4>Waardelijsten</h4>
-				<div id="waardelijst-intro" data-include="https://docs.geostandaarden.nl/bro/gen/waardelijst.html"></div>
-				<section id="waardelijst-niet-uitbreidbaar" data-include="https://docs.geostandaarden.nl/bro/gen/enumeratie.html"></section>
-				<section id="waardelijst-uitbreidbaar" data-include="https://docs.geostandaarden.nl/bro/gen/codelijst.html"></section>
-			</section>
-			<section id="organisatie" data-include="https://docs.geostandaarden.nl/bro/gen/organisatie.html"></section>
-		</section>
-		<section id="meetreeks" data-include="https://docs.geostandaarden.nl/bro/gen/meetreeks.html"></section>
-		<section id="domeinmodel" data-include="https://docs.geostandaarden.nl/bro/gen/domeinmodel-gen.html"></section>
-		<section id="verplichte-gegevens-waarden" data-include="https://docs.geostandaarden.nl/bro/gen/verplichte-gegevens-waarden.html"></section>
-	</section>
+	<!-- Hoofdstukken 5. en 6. Gegevensdefinitie en Uitbreidbare waardenlijsten  -->
+	<div data-include="./data/FRD-cat.respec.html" data-include-replace="true"></div>
 
+	<!-- Leaflet required for panZoomImage-->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-  
-  <!-- MODEL -->
-  <!-- hoofdstuk 5 en 6 -->
-  
-    <div data-include="data/FRD-cat.respec.html" data-include-replace=true></div>
-  
-  <!-- BESCHRIJVING -->
-  
+	<!-- panZoomImage -->
+	<script src="https://docs.geostandaarden.nl/bro/gen/js/panZoomImage.js"></script>
+
 </body>
-
 </html>
