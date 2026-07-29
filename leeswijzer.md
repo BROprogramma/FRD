@@ -2,7 +2,7 @@
 
 [Hoofdstuk 1](#inleiding) geeft het doel en de doelgroep van een catalogus.
 
-[Hoofdstuk 2](#algemene-kenmerken-en-begrippen) behandelt enkele algemene aspecten van het systeem van de registratie ondergrond en begrippen van algemene aard.
+[Hoofdstuk 2](#algemene-kenmerken-en-begrippen) behandelt enkele algemene aspecten van het BRO-systeem en begrippen van algemene aard.
 
 [Hoofdstuk 3](#formatieweerstandonderzoek) plaatst het registratieobject in de gegevenssystematiek van de registratie ondergrond en vertelt wat de benadering is geweest bij het opstellen van de gegevensdefinitie.
 
@@ -10,4 +10,4 @@
 
 [Hoofdstuk 5](#gegevensdefinitie) geeft de inhoud weer van het registratieobject, van de delen waaruit het is opgebouwd, de entiteiten, en van de eigenschappen van die entiteiten, de attributen.
 
-[Hoofdstuk 6](#uitbreidbare-waardelijsten) geeft de inhoud van de uitbreidbare waardelijsten weer, dat wil zeggen een lijst van waarden die een attribuut uit hoofdstuk 5 mag hebben.
+[Hoofdstuk 6](#uitbreidbare-waardelijsten) geeft de inhoud weer van de uitbreidbare waardelijsten, dat wil zeggen lijsten met de mogelijke waarden voor de attributen uit hoofdstuk 5 die naar een waardelijst verwijzen.
