@@ -37,7 +37,7 @@ let respecConfig = {
   publishVersion: " ",
   previousVersion: " ",
   //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beiden aan/uit!
-  previousPublishDate: "2021-09-01", 
+  previousPublishDate: "2021-07-01", 
   previousMaturity: "def",
   //-- de namen van de Editor(s) / Redacteur(en)---------------------------------------
   //-- vul in: per Editor: name:, company:, companyURL: -------------------------------
