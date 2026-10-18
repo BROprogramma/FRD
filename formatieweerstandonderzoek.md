@@ -1,3 +1,4 @@
+# Formatieweerstandonderzoek
 ## Grondwatermonitoring
 Grondwater is een belangrijke bestaansbron. Het grondwater wordt daarom in Nederland op grote schaal gemonitord en beheerd. Het beheer van het grondwater richt zich op de hoeveelheid grondwater en de kwaliteit ervan. Om dit beheer goed te kunnen uitvoeren, wordt in Nederland de toestand van het grondwater over langere tijd gevolgd. Dat heet grondwatermonitoring. Er wordt daarbij gekeken naar de grondwaterstand (kwantiteit), en naar de samenstelling van het grondwater (kwaliteit). Hiervoor worden ook regelmatig (periodiek) Formatieweerstandonderzoeken uitgevoerd. Door het verzamelen van deze meetgegevens kan (de verandering) van het (relatieve) saliniteitsgehalte van het grondwater in de ondergrond rondom grondwatermonitoring putten worden afgeleid.
 
@@ -11,7 +12,7 @@ In de [Regels omtrent de basisregistratie ondergrond](https://zoek.officielebeke
 
 De bestuursorganen die langdurig het grondwater (laten) monitoren op grondwaterkwantiteit, omdat zij daarin een wettelijke taak hebben, zijn Rijksoverheidsorganisaties (Rijkswaterstaat, Ministerie van Defensie), Provincies, Waterschappen, Gemeentes en bestuurlijke samenwerkingsverbanden. Daarnaast zijn er (semi)private organisaties die vanuit vergunningsplicht het grondwater langdurig monitoren op grondwaterkwantiteit, in opdracht van bevoegd gezag. Dit zijn bijvoorbeeld Gasunie, Prorail, drinkwaterbedrijven, grondwater onttrekkende industrie, (ondiepe) bodemenergie-exploitanten (bedrijven, ziekenhuizen, overige instellingen), natuurterreinbeheerorganisaties en exploitanten van ondiepe minerale delfstoffen. Deze organisaties doen periodiek grondwaterstandonderzoek en hebben daarvoor grondwatermonitoringnetten en meetplannen.
 
-De volledige scopeafbakening is beschreven in het [Scopedocument Formatieweerstandonderzoek](https://bro-productomgeving.nl/bpo/latest/grondwatermonitoring/formatieweerstandonderzoek-frd/scopedocument-formatieweerstandonderzoek-frd) (FRD).
+De volledige scopeafbakening is beschreven in het [Scopedocument Formatieweerstandonderzoek](https:www.//bro-productomgeving.nl/bpo/latest/grondwatermonitoring/formatieweerstandonderzoek-frd/scopedocument-formatieweerstandonderzoek-frd) (FRD).
 
 ## Domein grondwatermonitoring in de BRO
 Het domein grondwatermonitoring in de basisregistratie ondergrond (BRO) omvat de volgende vijf registratieobjecten:
@@ -32,12 +33,12 @@ In de technische landelijke voorziening van de basisregistratie ondergrond worde
 - Grondwaterstandonderzoek wordt afgekort tot GLD (Groundwater Level Dossier);
 - Formatieweerstandonderzoek wordt afgekort tot FRD (Formation Resistance Dossier).
 
-<figure id="image003">
-./data/Images/BRO_Registratieobjecten_Entiteitenschema + FRD.png
-<figcaption>De samenhang tussen de vijf registratieobjecten binnen het grondwatermonitoring domein.</figcaption>
+<figure id='image003'>
+		<img src="./data/Images/BRO_Registratieobjecten_Entiteitenschema + FRD.png" alt="Grondwaterdomein" width="300"/>
+		<figcaption>De samenhang tussen de vijf registratieobjecten binnen het grondwatermonitoring domein.</figcaption>
 </figure>
 
-Een grondwatermonitoringput betreft de constructie die gebruikt wordt om standen en/of de samenstelling van het grondwater te meten. Gewoonlijk bestaat een put uit een samenstel van buizen dat aan het oppervlak wordt beschermd tegen invloeden van buitenaf. Via de buizen wordt het grondwater dat zich op een bepaalde diepte bevindt ontsloten. Het deel van de buis waardoor het grondwater de buis binnen kan komen is het filter. Elke buis heeft één filter. Een filter fungeert als meetpunt in de basisregistratie ondergrond. Informatie over grondwatermonitoringput is beschreven in de [Catalogus Grondwatermonitoringput](https://basisregistratieondergrond.nl/inhoud-bro/registratieobjecten/grondwatermonitoring/gmw/).
+Een grondwatermonitoringput betreft de constructie die gebruikt wordt om standen en/of de samenstelling van het grondwater te meten. Gewoonlijk bestaat een put uit een samenstel van buizen dat aan het oppervlak wordt beschermd tegen invloeden van buitenaf. Via de buizen wordt het grondwater dat zich op een bepaalde diepte bevindt ontsloten. Het deel van de buis waardoor het grondwater de buis binnen kan komen is het filter. Elke buis heeft één filter. Een filter fungeert als meetpunt in de basisregistratie ondergrond. Informatie over grondwatermonitoringput is beschreven in de [Catalogus Grondwatermonitoringput](https://basisregistratieondergrond.nl/inhoud-bro/registratieobjecten/grondwatermonitoring/grondwatermonitoringput-gmw/).
 
 In bepaalde delen van Nederland worden bij inrichting van de put soms geo-ohmkabels aan een buis bevestigd. Dit zijn kabels die voorzien zijn van elektroden en aangesloten kunnen worden op een meetkastje. De kabels worden traditioneel gebruikt om de elektrische weerstand van de formatie te kunnen monitoren. De weerstand is een indicatie voor het zoutgehalte. Vroeger werden de geo-ohmkabels daarom wel zoutwachters genoemd. De elektroden zijn paarsgewijs gegroepeerd tot meetparen.
 
@@ -45,7 +46,7 @@ Binnen het grondwaterdomein in de basisregistratie ondergrond kent alleen de gro
 
 Bij grondwaterstandonderzoeken, grondwatersamenstellingsonderzoeken en formatieweerstandonderzoeken ligt tevens de verwijzing vast naar één of meerdere grondwatermonitoringnetten ten behoeve waarvan het onderzoek is uitgevoerd.
 
-Een grondwatermonitoringnet is een verzameling locaties waar, voor een bepaald monitoringdoel met een bepaald wettelijk kader, periodiek onderzoek aan het grondwater op een bepaalde diepte wordt gedaan om de toestand van het grondwater te kunnen bepalen en de eventuele veranderingen erin te kunnen volgen. Het grondwatermonitoringnet weerspiegelt de groepering van onderzoeksgegevens door de bronhouder op basis van het doel van de monitoring. Het registratieobject vergroot daarmee de hergebruikswaarde voor afnemers van de gegevens van de basisregistratie ondergrond. Informatie over grondwatermonitoringnet is beschreven in de [Catalogus Grondwatermonitoringnet](https://basisregistratieondergrond.nl/inhoud-bro/registratieobjecten/grondwatermonitoring/gmn/).
+Een grondwatermonitoringnet is een verzameling locaties waar, voor een bepaald monitoringdoel met een bepaald wettelijk kader, periodiek onderzoek aan het grondwater op een bepaalde diepte wordt gedaan om de toestand van het grondwater te kunnen bepalen en de eventuele veranderingen erin te kunnen volgen. Het grondwatermonitoringnet weerspiegelt de groepering van onderzoeksgegevens door de bronhouder op basis van het doel van de monitoring. Het registratieobject vergroot daarmee de hergebruikswaarde voor afnemers van de gegevens van de basisregistratie ondergrond. Informatie over grondwatermonitoringnet is beschreven in de [Catalogus Grondwatermonitoringnet](https://basisregistratieondergrond.nl/inhoud-bro/registratieobjecten/grondwatermonitoring/grondwatermonitoringnet-gmn/).
 
 Een grondwatermonitoringnet valt onder de verantwoordelijkheid van één bronhouder en heeft een vastgesteld monitoringdoel. In de praktijk kan het voorkomen dat een formatieweerstandonderzoek ten behoeve van meer dan één doel wordt uitgevoerd. Omdat er voor afzonderlijke monitoringdoelen verschillende grondwatermonitoringnetten zijn, betekent dit voor de basisregistratie ondergrond dat formatieweerstandonderzoeken kunnen toebehoren aan één of meerdere grondwatermonitoringnetten.
 
@@ -71,9 +72,9 @@ Beide nadere interpretaties vallen buiten de scope van dit registratieobject.
 ### Het proces
 Het proces waarin grondwaterstandonderzoeksgegevens in de praktijk ontstaan is schematisch weergegeven in de onderstaande figuur en wordt daaronder beschreven. Daarbij wordt benadrukt dat de precieze invulling van de processtappen in de praktijk vaak afhankelijk is van het gebruiksdoel en het toepassingsgebied van de monitoring. Het komt ook voor dat niet alle beschreven stappen worden doorlopen. De figuur geeft het volledige proces, van vaststellen van de doelstelling tot en met registratie in de basisregistratie ondergrond. In deze catalogus beschrijven we alleen de onderdelen meten, controleren, omrekenen en beoordelen.
 
-<figure id="image004">
-./data/Images/FRD proces_Proces Formatieweerstandonderzoek.png
-<figcaption>De stappen in het bewerkingsproces, vanaf de originele meting tot aan de definitieve gegevens.</figcaption>
+<figure id='image004'>
+	<img src="./data/Images/FRD proces_Proces Formatieweerstandonderzoek.png" alt="Proces" width="300"/>
+	<figcaption>De stappen in het bewerkingsproces, vanaf de originele meting tot aan de definitieve gegevens.</figcaption>
 </figure>
 
 1. Meten
@@ -130,9 +131,9 @@ De kwaliteit van de metingen wordt beoordeeld. Hoe dit proces van beoordelen van
 ### Instrumentconfiguratie
 Van iedere elektromagnetische meting wordt een aantal gegevens over het meetinstrument vastgelegd in de instrumentconfiguratie. Onderdeel van de instrumentconfiguratie is de instrumentconfiguratie ID. Dit is een door de bronhouder of dataleverancier te bepalen code van maximaal 40 karakters die de kenmerken van een instrumentconfiguratie uniek identificeren. Binnen het registratieobject moet deze ID uniek zijn. Het instrumentconfiguratie ID kan bijvoorbeeld gebruikt worden bij aanvullende leveringen van een formatieweerstandonderzoek: Wanneer een meting wordt aangeleverd die dezelfde instrumentconfiguratie heeft als een meting die al geregistreerd is, kan de bronhouder/dataleverancier ervoor kiezen om niet alle instrumentconfiguratiekenmerken opnieuw aan te leveren maar in plaats daarvan te verwijzen naar de reeds geregistreerde instrumentconfiguratie door alleen de instrumentconfiguratie ID van de reeds geregistreerde instrumentconfiguratie aan te leveren. De overige instrumentconfiguratiekenmerken hoeven in dit geval niet opnieuw aangeleverd te worden.
 
-<figure id="image005">
-png" alt="EMmeting" heigth="30%" width="30%"/>
-<figcaption>Elektromagnetische meting</figcaption>
+<figure id='image005'> 
+	<img src="./data/Images/BRO_Cat_FigFWO-3 (1).png" alt="EMmeting" heigth="30%" width="30%"/>
+	<figcaption>Elektromagnetische meting</figcaption>
 </figure>
 
 De afstand tussen de spoelen en de spoelfrequentie hebben invloed op de indringingsdiepte van het elektromagnetische signaal. De relatieve positie van de zendspoel is de afstand tussen de bovenkant van het instrument en de zendspoel. Deze afstand mag niet groter zijn dan de lengte van het instrument. De relatieve positie van de eerste ontvangstspoel is de afstand tussen de bovenkant van het instrument en de eerste elektromagnetische ontvangstspoel. Een instrument kan meerdere ontvangstspoelen bevatten. De aanwezigheid van een tweede ontvangstspoel wordt geregistreerd alsmede de afstand tussen de bovenkant van het instrument en de tweede spoel. Van het instrument wordt ook de totale lengte vastgelegd.
@@ -148,8 +149,8 @@ Bij iedere verticale positie wordt in ieder geval één meetwaarde vastgelegd. D
 ### Geo-ohmkabel meetmethode
 Ten behoeve van geo-ohm metingen wordt bij inrichting van de put een geo-ohmkabel op een aantal punten aan een monitoringbuis bevestigd. De geo-ohmkabel bevat meerdere elektrodes en de posities van de elektrodes ten opzichte van de buis zijn gefixeerd. De elektroden kunnen zowel dienen als punten om stroom in de bodem te injecteren alsook punten waartussen de elektrische weerstand gemeten kan worden. De elektroden van de meetkabel worden daartoe beurtelings geactiveerd met behulp van een elektrische schakeling. Een meting wordt uitgevoerd met vier elektroden: er wordt stroom ingebracht middels een paar (twee) stroomelektroden en er wordt gemeten met een paar (twee) meetelektroden.
 
-<figure id="image006">
-./data/Images/BRO_Cat_FigFWO-2-NM.png
+<figure id='image006'> 
+	<img src="./data/Images/BRO_Cat_FigFWO-2-NM.png" alt="Geo-ohmkabelmeting" heigth="30%" width="30%"/>
 <figcaption>Geo-ohmkabelmeting</figcaption>
 </figure>
 
