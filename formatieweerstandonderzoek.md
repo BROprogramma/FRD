@@ -3,7 +3,7 @@
 Grondwater is een belangrijke bestaansbron. Het grondwater wordt daarom in Nederland op grote schaal gemonitord en beheerd. Het beheer van het grondwater richt zich op de hoeveelheid grondwater en de kwaliteit ervan. Om dit beheer goed te kunnen uitvoeren, wordt in Nederland de toestand van het grondwater over langere tijd gevolgd. Dat heet grondwatermonitoring. Er wordt daarbij gekeken naar de grondwaterstand (kwantiteit), en naar de samenstelling van het grondwater (kwaliteit). Hiervoor worden ook regelmatig (periodiek) Formatieweerstandonderzoeken uitgevoerd. Door het verzamelen van deze meetgegevens kan (de verandering) van het (relatieve) saliniteitsgehalte van het grondwater in de ondergrond rondom grondwatermonitoring putten worden afgeleid.
 
 In het domein grondwatermonitoring staan de grondwatermonitoringnetten centraal. Deze zijn ingericht om het grondwater in Nederland te kunnen beheren. Het doel waarvoor een monitoringnet is ingesteld, het monitoringdoel, beperkt zich in veel gevallen tot kwantiteit of kwaliteit (waaronder de uit formatieweerstand af te leiden saliniteit), maar het komt ook voor dat onderzoek aan zowel de kwantiteit als de kwaliteit wordt gedaan binnen hetzelfde grondwatermonitoringnet.
- 
+
 Grondwatermonitoring houdt in dat de toestand van het grondwater in een bepaald gebied, of eigenlijk in een bepaald deel van de ondergrond, over langere tijd gevolgd wordt. De grootte van het gebied en de diepte van monitoring verschillen per grondwatermonitoringnet. Ook de duur van monitoring wisselt sterk.
 
 In het [Besluit basisregistratie ondergrond](https://zoek.officielebekendmakingen.nl/stb-2017-421.html) is omschreven welke vormen van monitoring onder deze basisregistratie vallen. Het belangrijkste criterium is het type organisatie dat verantwoordelijk is voor het beheer van het grondwater: de grondwatermonitoring moet door, of in opdracht van, een bestuursorgaan, de bronhouder, worden uitgevoerd. Verder is er een beperking aan de tijdschaal gesteld. Formatieweerstandonderzoek is gebaat bij het frequent en meerjarig verzamelen van gegevens. Wanneer een monitoringnet is ingesteld om de toestand van het grondwater over een langere periode van ten minste 1 jaar en met meerdere meetmomenten, dan valt het altijd onder de basisregistratie ondergrond. Aan de ruimtelijke schaal van monitoring zijn voor de basisregistratie ondergrond geen grenzen gesteld, afgezien van het feit dat voor de gehele basisregistratie ondergrond geldt dat het gegevens bevat over de ondergrond van Nederland en zijn Exclusieve Economische Zone (EEZ). De EEZ is het gebied op de Noordzee waar Nederland economische rechten heeft.
@@ -50,6 +50,7 @@ Een grondwatermonitoringnet is een verzameling locaties waar, voor een bepaald m
 
 Een grondwatermonitoringnet valt onder de verantwoordelijkheid van één bronhouder en heeft een vastgesteld monitoringdoel. In de praktijk kan het voorkomen dat een formatieweerstandonderzoek ten behoeve van meer dan één doel wordt uitgevoerd. Omdat er voor afzonderlijke monitoringdoelen verschillende grondwatermonitoringnetten zijn, betekent dit voor de basisregistratie ondergrond dat formatieweerstandonderzoeken kunnen toebehoren aan één of meerdere grondwatermonitoringnetten.
 
+## Het formatieweerstandonderzoek
 ### Inleiding
 Een *formatieweerstandonderzoek* is een monitorings-activiteit waarbij gedurende de levensduur (van meetsysteem en/of put) met een zekere frequentie herhaaldelijk de schijnbare formatieweerstand met behulp van een meetinstrument, in of aan de grondwatermonitoringput, wordt bepaald.
 
@@ -78,7 +79,6 @@ Het proces waarin grondwaterstandonderzoeksgegevens in de praktijk ontstaan is s
 </figure>
 
 1. Meten  
-
 	Twee in de praktijk gebruikte meetmethodes opgenomen in de BRO zijn: de meetmethode waarbij de meting plaatsvindt met behulp van een geo-ohmkabel en de meetmethode waarbij de meting plaatsvindt via een elektromagnetische meting.
 
 	De geo-ohmmeting wordt uitgevoerd op een geo-ohmkabel. Dit is een kabel met elektrodes die vast zit aan de constructie van een monitoringbuis in een grondwatermonitoringput.
@@ -88,11 +88,9 @@ Het proces waarin grondwaterstandonderzoeksgegevens in de praktijk ontstaan is s
 	De gegevens van een formatieweerstandonderzoek ontstaan gedurende de "levensduur" van het onderzoek, dat wil zeggen: gedurende de monitoringsperiode. Een belangrijk uitgangspunt voor formatieweerstandonderzoek is dat er op min of meer vastomlijnde momenten (deel)gegevens geregistreerd worden als er daartoe aanleidingen zijn. Een formatieweerstandonderzoek wordt gedurende de levensduur steeds aangevuld met nieuwe observaties. Er ontstaat zo een tijdreeks van periodiek uitgevoerde formatieweerstandonderzoek metingen, via elektroden (elektrisch) of inductief (elektromagnetisch) verkregen.
 
 2. Controleren  
-
 	De meetreeksen van zowel de elektromagnetische meting als de meting met de geo-ohmkabel worden door de bronhouder en/of een derde partij gecontroleerd op fouten en afwijkingen o.a. aan de hand van de samenhang met andere beschikbare (meet)gegevens. Daarbij kunnen controles op integriteit, representativiteit, consistentie en/of plausibiliteit doorlopen worden. De controles en correcties leiden tot een keuring of oordeel over de kwaliteit en bruikbaarheid van de gegevens.
 
 3. Omrekenen  
-
 	De omrekening van gemeten weerstand en/of geleidbaarheid naar schijnbare formatieweerstand kan alleen plaatsvinden als er voldoende gegevens beschikbaar zijn over de meetconfiguratie.
 
 	Voor historische metingen die op de methode met de geo-ohmkabel zijn gebaseerd is dit niet altijd het geval. Deze historische meetwaardes zijn alleen te vergelijken met gegevens van hetzelfde paar van meetelektrodes maar van een andere datum. Alleen als de elektrodeposities en de onderlinge afstanden van de elektrodes van meetpaar en stroompaar bekend zijn kan de schijnbare formatieweerstand berekend worden en, indien gewenst, vergeleken worden met andere metingen.
@@ -100,7 +98,6 @@ Het proces waarin grondwaterstandonderzoeksgegevens in de praktijk ontstaan is s
 	Bij de elektromagnetische meting berekent het meetinstrument veelal de elektrische geleidbaarheid van de formatie. Deze geleidbaarheid is eenvoudig om te rekenen naar weerstand, namelijk door het getal 1 te delen door de gemeten geleidbaarheid. Dit wordt de reciproke waarde genoemd. Deze berekening vindt soms al plaats in het meetinstrument.
 
 4. Beoordelen  
-
 	De uitkomsten van het proces worden vastgelegd en leiden tot een status kwaliteitscontrole die een eindoordeel geeft over de bruikbaarheid van de meting.
 
 ## Belangrijkste entiteiten
@@ -119,6 +116,7 @@ Een formatieweerstandonderzoek kan ten behoeve van meer dan één monitoringdoel
 
 Bij een formatieweerstandonderzoek ligt de verwijzing vast naar de monitoringbuis waar het onderzoek is uitgevoerd (zie [§ 3.2 Domein grondwatermonitoring in de BRO](#domein-grondwatermonitoring-in-de-bro)). De verwijzing wordt gemaakt op basis van het *BRO-ID* van de *grondwatermonitoringput* in combinatie met het *buisnummer* van de monitoringbuis waarin het onderzoek is uitgevoerd.
 
+### Bepaling formatieweerstand
 De entiteit "Formatieweerstand" is een kapstok voor twee meetmethodes om de (schijnbare) formatieweerstand te bepalen: de elektromagnetische meetmethode en de geo-ohmkabel meetmethode. Een formatieweerstandonderzoek volgt door de tijd heen altijd maar één meetmethode. Een formatieweerstandonderzoek kan gestart worden zonder dat de meetmethode bekend is. Aan de hand van de eerste aangeleverde gegevens ten aanzien van instrument- of meetconfiguratie wordt afgeleid welke meetmethode in het vervolg gehanteerd gaat worden.
 
 ### Elektromagnetische meetmethode
@@ -176,7 +174,7 @@ Iedere meting aan een geo-ohmkabel wordt aan de hand van een meetconfiguratie ui
 
 #### Meetconfiguratie ID
 Onderdeel van de entiteit Meetconfiguratie is de *meetconfiguratie ID*. Dit is een door de bronhouder of dataleverancier te bepalen code van maximaal 40 karakters die de kenmerken van een meetconfiguratie uniek identificeren. Binnen het registratieobject moet deze ID uniek zijn. De meetconfiguratie ID kan bijvoorbeeld gebruikt worden bij aanvullende leveringen van een Formatieweerstandonderzoek. Wanneer een meting wordt aangeleverd die dezelfde meetconfiguratie heeft als een meting die al geregistreerd is, kan de bronhouder/dataleverancier ervoor kiezen om niet alle meetconfiguratiekenmerken opnieuw aan te leveren maar in plaats daarvan te verwijzen naar de reeds geregistreerde meetconfiguratie door alleen de meetconfiguratie ID van de reeds geregistreerde meetconfiguratie aan te leveren. De overige meetconfiguratiekenmerken hoeven in dit geval niet opnieuw aangeleverd te worden.
- 
+
 De meetconfiguratie blijft gedurende het onderzoek ongewijzigd zolang de samenstelling van het meetpaar en elektrodepaar ongewijzigd blijft. De elektrodes van de elektrodeparen betreffen de elektrodes, hun elektrodepositie en elektrodenummer van de GMW-monitoringbuis en de daaraan bevestigde geo-ohmkabel waarnaar in het Formatieweerstandonderzoek verwezen wordt. Deze gegevens zijn dus niet vanuit dit RO zelf te ‘beïnvloeden’. Voorwaarde is daarmee uiteraard wel dat de bronhouder/ dataleverancier van het Formatieweerstandonderzoek de beschikking heeft over deze GMW gegevens. Voor experimentele doeleinden kan gekozen worden voor verschillende meetconfiguraties met dezelfde geo-ohmkabel. Deze worden in de BRO opgenomen als afzonderlijke Formatieweerstandonderzoeken met een eigen BRO-ID.
 
 ### Schijnbare Formatieweerstand berekening
@@ -189,7 +187,7 @@ Om de schijnbare formatieweerstand te kunnen berekenen uit de geo-ohmkabelmeting
 De kwaliteit van de berekeningen wordt beoordeeld. Hoe dit proces van beoordelen van de kwaliteit van de berekeningen verloopt, is beschreven in een werkvoorschrift of procedure, de beoordelingsprocedure.
 
 ### Schijnbare formatieweerstand waarde
-De entiteit Schijnbare Formatieweerstand waarde bevat de attributen verticale positie en formatieweerstand. De verticale positie wordt uitgedrukt in hoogte ten opzichte van NAP. Bij een elektromagnetische meting is verticale positie ten opzichte van NAP al vastgelegd in het Elektromagnetische meting meetrecord. Bij een geo-ohmkabelmeting wordt de verticale positie afgeleid van de posities van de gebruikte elektrodeparen ten opzichte van de bovenkant van de buis, zoals vastgelegd in de entiteit Meetconfiguratie, en de positie bovenkant ten opzichte van NAP, zoals vastgelegd in GMW.
+De entiteit Schijnbare Formatieweerstand waarde bevat de attributen verticale positie en formatieweerstand. De verticale positie  wordt uitgedrukt in hoogte ten opzichte van NAP. Bij een elektromagnetische meting is verticale positie ten opzichte van NAP al vastgelegd in het Elektromagnetische meting meetrecord. Bij een geo-ohmkabelmeting wordt de verticale positie afgeleid van de posities van de	gebruikte elektrodeparen ten opzichte van de bovenkant van de buis, zoals vastgelegd in de entiteit Meetconfiguratie, en de positie bovenkant ten opzichte van NAP, zoals vastgelegd in GMW.
 
 Bij de Formatieweerstandberekening wordt bij elke individuele berekening door de bronhouder (of een derde partij in opdracht van een bronhouder) een eindoordeel over de kwaliteit van de berekening aangegeven. Dit eindoordeel wordt gevormd aan de hand van een, voor de formatieweerstandberekening gebruikte beoordelingsprocedure. Het eindoordeel wordt geregistreerd in de status kwaliteitscontrole.
 
