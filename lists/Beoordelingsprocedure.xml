@@ -24,4 +24,10 @@
 		<IMBROA>v</IMBROA>
 		<Omschrijving>Het is onbekend volgens welke procedure de beoordeling is gedaan (IMBRO/A kwaliteitsregime).</Omschrijving>
 	</Beoordelingsprocedure>
+	<Beoordelingsprocedure>
+	    <Waarde>EvidesZoutwachterprotocol</Waarde>
+	    <IMBRO>v</IMBRO>
+	    <IMBROA>v</IMBROA>
+	    <Omschrijving>Evides-zoutwachterprotocol voor de beoordeling van zoutwachtermetingen</Omschrijving>
+	</Beoordelingsprocedure>
 </domeintabel>
